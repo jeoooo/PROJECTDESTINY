@@ -52,7 +52,7 @@
 			</ul>
 		</div>
 		<hr class="my-6 border-white sm:mx-auto lg:my-8" />
-		<span class=" text-sm text-white inline-flex fill-white sm:text-center font-ibm-plex-sans"
+		<span class="w-full text-sm text-white inline-flex fill-white sm:text-center font-ibm-plex-sans"
 			>Project DESTINY. Made with
 			<svg viewBox="0 0 128 128" class="w-5 mx-2 transition ease-in-out hover:fill-[#FF3E00]">
 				<path
