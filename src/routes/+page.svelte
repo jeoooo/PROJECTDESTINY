@@ -1,4 +1,6 @@
 <script>
+	import SearchBar from '$lib/components/SearchBar.svelte';
+
 	import WebsiteCard from '$lib/components/WebsiteCard.svelte';
 
 	// @ts-nocheck
@@ -27,7 +29,7 @@
 			Sites Tracker. Ensuring website uptime for seamless learning experiences in Davao City schools.
 		</div>
 	</div>
-
+	<SearchBar />
 	{#each websites_data as data}
 		<div class=" mx-40 mb-5 h-full">
 			<div class="flex flex-row h-auto items-center">
@@ -51,38 +53,6 @@
 
 			<div class="grid grid-flow-row grid-cols-3 gap-4 py-2 px-2 mt-4">
 				{#each data.expand.websites as website}
-					<!-- <div
-						class="overflow-hidden bg-white border border-black h-[250px] w-full relative shadow-lg transition ease-in-out hover:scale-105 hover:z-40"
-					>
-						<img
-							class="absolute -right-14 h-96 opacity-5"
-							src="http://127.0.0.1:8090/api/files/{data.collectionId}/{data.id}/{data.logo}"
-							alt=""
-							srcset=""
-							style=""
-						/>
-						<a
-							href={website.url}
-							target="_blank"
-							class="absolute m-5 top-0 w-fit font-medium text-2xl transition ease-in-out font-ibm-plex-sans hover:text-blue-600"
-						>
-							{website.website_name}
-						</a>
-						<div
-							class="w-32 h-20 absolute m-5 bottom-0 right-0 font-medium text-xl font-ibm-plex-sans"
-						>
-							
-						</div>
-						<div
-							class="absolute m-5 top-[36px] bg-green-50 text-green-800 text-xs px-3 py-1 rounded-3xl w-fit font-normal text-[14px] font-ibm-plex-sans"
-						>
-							<i class="fa-solid fa-signal mr-1"></i> Online
-						</div>
-						<div class="absolute m-5 top-[72px] text-[14px] text-justify">
-							{website.website_description}
-						</div>
-
-					</div> -->
 					<WebsiteCard
 						id={data.id}
 						website_name={website.website_name}
