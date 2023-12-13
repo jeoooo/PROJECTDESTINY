@@ -5,7 +5,6 @@
 	// D.E.S.T.I.N.Y.: Davao Educational Sites Tracker Identifying Network Yield
 </script>
 
-<h1 class="text-4xl font-bold font-ibm-plex-sans mb-2 mx-[170px]">Search Schools</h1>
 <form action="">
 	<div class="flex flex-row bg-white mx-[170px] my-5 w-max">
 		<i class="fa-solid p-5 fa-magnifying-glass z-50"></i>

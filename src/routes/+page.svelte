@@ -1,4 +1,6 @@
 <script>
+	import Hero from '../lib/components/Hero.svelte';
+
 	import SearchBar from '$lib/components/SearchBar.svelte';
 
 	import WebsiteCard from '$lib/components/WebsiteCard.svelte';
@@ -13,23 +15,10 @@
 	let hovereffect = 'grayscale hover:grayscale-0 transition ease-in-out'; // test
 </script>
 
-<body class="flex flex-col w-full h-full mb-auto pb-10">
-	<!-- hero -->
-	<div class="flex flex-row border border-black bg-white mx-[170px] my-5 p-2 w-fit">
-		<div class="flex flex-col items-center justify-center w-full h-full py-16">
-			<p class="w-full font-bold text-4xl font-ibm-plex-sans text-center mb-4">Project DESTINY</p>
-			<p class="w-full font-ibm-plex-sans text-center">
-				<strong>D</strong>avao <strong>E</strong>ducational
-				<strong>S</strong>ites <strong>T</strong>racker <strong>I</strong>dentifying
-				<strong>N</strong>etwork <strong>Y</strong>ield
-			</p>
-		</div>
-		<div class="w-full h-full p-20 font-ibm-plex-sans indent-10 text-justify">
-			<strong>Is your student portal down? Check them here!</strong> Explore DESTINY, your Davao Educational
-			Sites Tracker. Ensuring website uptime for seamless learning experiences in Davao City schools.
-		</div>
-	</div>
-	<SearchBar />
+<body class="flex flex-col w-full h-full mb-auto bg-slate-100">
+	<Hero />
+	<h1 class="text-4xl font-bold font-ibm-plex-sans mb-8 mx-[170px]">Schools</h1>
+	<!-- <SearchBar /> -->
 	{#each websites_data as data}
 		<div class=" mx-40 mb-5 h-full">
 			<div class="flex flex-row h-auto items-center">
@@ -65,4 +54,34 @@
 			</div>
 		</div>
 	{/each}
+	<div class="bg-white mx-[170px] my-20 p-3 border border-black shadow-lg">
+		<div class="flex flex-col justify-center items-center">
+			<p class="text-center font-bold text-4xl font-ibm-plex-sans my-5">Wanna Contribute?</p>
+			<p class=" text-center text-lg font-ibm-plex-sans">
+				Help us improve and expand our educational site tracker! If you would like to add a new
+				school/site to our list or suggest edits for existing entries, please fill out the form
+				below. Your contributions are invaluable in keeping DESTINY up-to-date and comprehensive.
+			</p>
+			<div class="flex flex-row justify-center items-center">
+				<a
+					href="https://github.com/jeoooo/PROJECTDESTINY"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<button
+						type="button"
+						class="transition ease-in-out my-5 bg-slate-100 px-20 py-3 mx-5 font font-ibm-plex-sans border border-black hover:text-white hover:bg-black"
+						>GitHub Repository
+					</button>
+				</a>
+				<a href="https://forms.gle/GvmoaFudPtTrKk9f6" target="_blank" rel="noopener noreferrer">
+					<button
+						type="button"
+						class="transition ease-in-out my-5 bg-slate-100 px-20 py-3 mx-5 font font-ibm-plex-sans border border-black hover:text-white hover:bg-black"
+						>Suggest Edits
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>
 </body>
