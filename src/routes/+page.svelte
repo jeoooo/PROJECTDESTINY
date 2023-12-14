@@ -7,7 +7,6 @@
 
 	// @ts-nocheck
 	// D.E.S.T.I.N.Y.: Davao Educational Sites Tracker Identifying Network Yield
-	import '../app.css';
 
 	export let data;
 	const { websites_data } = data;
