@@ -7,7 +7,6 @@
 
 	// @ts-nocheck
 	// D.E.S.T.I.N.Y.: Davao Educational Sites Tracker Identifying Network Yield
-	import '../app.css';
 
 	export let data;
 	const { websites_data } = data;
@@ -55,31 +54,31 @@
 		</div>
 	{/each}
 	<div class="bg-white mx-[170px] my-20 p-3 border border-black shadow-lg">
-		<div class="flex flex-col justify-center items-center">
+		<div class="flex flex-col justify-center items-center p-4">
 			<p class="text-center font-bold text-4xl font-ibm-plex-sans my-5">Wanna Contribute?</p>
 			<p class=" text-center text-lg font-ibm-plex-sans">
 				Help us improve and expand our educational site tracker! If you would like to add a new
 				school/site to our list or suggest edits for existing entries, please fill out the form
 				below. Your contributions are invaluable in keeping DESTINY up-to-date and comprehensive.
 			</p>
-			<div class="flex flex-row justify-center items-center">
+			<div class="flex flex-row justify-center items-center w-full">
 				<a
 					href="https://github.com/jeoooo/PROJECTDESTINY"
 					target="_blank"
 					rel="noopener noreferrer"
+					class=" flex w-[250px] mx-2 transition ease-in-out my-5 bg-slate-100 pl-5 py-3 font font-ibm-plex-sans border border-black hover:text-white hover:bg-black"
 				>
-					<button
-						type="button"
-						class="transition ease-in-out my-5 bg-slate-100 px-20 py-3 mx-5 font font-ibm-plex-sans border border-black hover:text-white hover:bg-black"
-						>GitHub Repository
-					</button>
+					GitHub Repository
+					<i class="fa-brands fa-github pl-14 py-1"></i>
 				</a>
-				<a href="https://forms.gle/GvmoaFudPtTrKk9f6" target="_blank" rel="noopener noreferrer">
-					<button
-						type="button"
-						class="transition ease-in-out my-5 bg-slate-100 px-20 py-3 mx-5 font font-ibm-plex-sans border border-black hover:text-white hover:bg-black"
-						>Suggest Edits
-					</button>
+				<a
+					href="https://github.com/jeoooo/PROJECTDESTINY"
+					target="_blank"
+					rel="noopener noreferrer"
+					class=" flex w-[250px] mx-2 transition ease-in-out my-5 bg-slate-100 pl-5 py-3 font font-ibm-plex-sans border border-black hover:text-white hover:bg-black"
+				>
+					Suggest Edits
+					<i class="fa-solid fa-pen-to-square pl-[90px] py-1"></i>
 				</a>
 			</div>
 		</div>
