@@ -33,33 +33,14 @@
 	import { formatDate } from '$lib/utils/formatDate';
 	import { onMount } from 'svelte';
 
-	const apiUrl = 'http://worldtimeapi.org/api/timezone/Asia/Manila';
-	const schools =
-		'http://127.0.0.1:8090/api/collections/schools/records?sort=school_name&fields=school_name,acronym';
-	let responseData: { datetime: string };
-	let schoolsData: { items: any };
-	let date: string;
-
-	onMount(async () => {
-		try {
-			const response = await fetch(apiUrl);
-			const response2 = await fetch(schools);
-			responseData = await response.json();
-			schoolsData = await response2.json();
-			// console.log(responseData);
-			// console.log(schoolsData);
-			date = formatDate(responseData.datetime);
-			// console.log(date);
-		} catch (error) {
-			console.error('Error:', error);
-			// If there's an error, set the date to the system date
-			date = formatDate(new Date().toISOString());
-		}
-	});
+	export let data;
+	const { schools, date } = data;
+	console.log(date);
+	console.log(schools);
 </script>
 
 <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
-	<div class=" bg-black mb-8 pb-6">
+	<div class=" bg-[#172651] mb-8 pb-6">
 		<h1
 			class="text-white flex flex-row font-ibm-plex-sans font-normal mx-[350px] my-2 w-fit text-8xl mt-20"
 		>
@@ -73,7 +54,7 @@
 	</div>
 
 	<!-- <hr class="mx-[300px] border-black my-4 mt-2" /> -->
-	<h1 class="mx-[350px] mt-2 text-2xl font-ibm-plex-sans font-base">
+	<!-- <h1 class="mx-[350px] my-2 text-2xl font-ibm-plex-sans font-base">
 		<i class="fa-solid fa-arrow-right mr-2"></i>What is Project DESTINY?
 	</h1>
 	<h1 class="mx-[350px] my-2 text-2xl font-ibm-plex-sans font-base">
@@ -81,9 +62,9 @@
 	</h1>
 	<h1 class="mx-[350px] my-2 text-2xl font-ibm-plex-sans font-base">
 		<i class="fa-solid fa-arrow-right mr-2"></i>What is Project DESTINY?
-	</h1>
+	</h1> -->
 
-	<h1 class="mx-[350px] mt-10 mb-4 text-4xl font-ibm-plex-sans font-normal">
+	<h1 class="mx-[350px] mt-8 mb-4 text-4xl font-ibm-plex-sans font-normal">
 		About Project DESTINY
 	</h1>
 	<h1 class="mx-[350px] my-4 text-3xl font-ibm-plex-sans font-base">What's this?</h1>
@@ -126,21 +107,17 @@
 		Which schools in Davao City are included in the tracker?
 	</h1>
 	<p class="mx-[350px] my-4 text-base text-justify font-ibm-plex-sans font-normal">
-		{#if responseData}
-			As of {date} The following schools included in the tracker are the following
+		{#if date}
+			As of {formatDate(date)} The following schools included in the tracker are the following
 		{:else}
 			As of {formatDate(new Date().toISOString())} The following schools included in the tracker are
 			the following
 		{/if}
 	</p>
 	<ol class="mx-[350px] my-4 list-disc pl-10 text-base text-justify font-ibm-plex-sans font-normal">
-		{#if schoolsData && schoolsData.items}
-			{#each schoolsData.items as { acronym, school_name }}
-				<li>{school_name} ({acronym})</li>
-			{/each}
-		{:else}
-			<li>Loading...</li>
-		{/if}
+		{#each schools as { acronym, school_name }}
+			<li>{school_name} ({acronym})</li>
+		{/each}
 	</ol>
 
 	<h1 class="mx-[350px] my-4 text-3xl font-ibm-plex-sans font-base">
@@ -221,3 +198,4 @@
 		schools, and the tracker respects and acknowledges their ownership.
 	</p>
 </body>
+>

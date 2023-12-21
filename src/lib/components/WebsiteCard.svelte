@@ -11,6 +11,7 @@
 	export let url = 'url';
 	export let website_name = 'website_name';
 	export let website_description = 'website_description';
+	export let status;
 </script>
 
 <div
@@ -33,7 +34,7 @@
 	<div class="w-32 h-20 absolute m-5 bottom-0 right-0 font-medium text-xl font-ibm-plex-sans">
 		<!-- Lineplot {data} width={140} height={90} -->
 	</div>
-	<StatusBadge />
+	<StatusBadge website_status={status} />
 	<div class="absolute m-5 top-[72px] text-[14px] text-justify">
 		{website_description}
 	</div>

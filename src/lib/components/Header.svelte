@@ -6,7 +6,7 @@
 	// export let data: LayoutData;
 </script>
 
-<nav class="w-fill h-12 bg-black">
+<nav class="w-fill h-12 bg-[#172651]">
 	<div class="w-fill h-full mx-40">
 		<div class="flex flex-row w-fit h-full p">
 			<a href="/" class=" border-r-2 my-2 text-white font-ibm-plex-sans">

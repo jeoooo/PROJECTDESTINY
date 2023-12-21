@@ -4,28 +4,31 @@
 	// export let data: LayoutData;
 </script>
 
-<footer class="bg-black">
+<footer class="bg-[#172651]">
 	<div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
 		<div class="sm:flex sm:items-center sm:justify-between">
 			<a
 				href="https://flowbite.com/"
 				class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
 			>
-				<img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
 				<span
 					class="text-white self-center text-2xl font-semibold whitespace-nowrap font-ibm-plex-sans"
 					>Project DESTINY</span
 				>
 			</a>
 			<ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0">
-				<li>
+				<!-- <li>
 					<a href="#about" class="hover:underline me-4 md:me-6 font-ibm-plex-sans">About</a>
+				</li> -->
+				<li>
+					<a href="/faq" class="hover:underline me-4 md:me-6 font-ibm-plex-sans">FAQ</a>
 				</li>
 				<li>
-					<a href="#faq" class="hover:underline me-4 md:me-6 font-ibm-plex-sans">FAQ</a>
-				</li>
-				<li>
-					<a href="#github" class="hover:underline me-4 md:me-6 font-ibm-plex-sans">Github Repo</a>
+					<a
+						href="https://github.com/jeoooo/PROJECTDESTINY"
+						target="_blank"
+						class="hover:underline me-4 md:me-6 font-ibm-plex-sans">Github Repo</a
+					>
 				</li>
 			</ul>
 		</div>
