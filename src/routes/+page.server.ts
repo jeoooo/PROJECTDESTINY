@@ -9,30 +9,36 @@ export const load: PageServerLoad = async () => {
 
 	const websites_data: any = await websites_response.json();
 
-	let websiteStatuses: { [key: string]: string } = {};
+	function getAllWebsites(data: any) {
+		const allWebsites: any = [];
 
-	for (let school of websites_data.items) {
-		for (let websiteId of school.websites) {
-			const website = school.expand.websites.find((site: any) => site.id === websiteId);
+		// Check if data has 'items' property
+		if (data.items && Array.isArray(data.items)) {
+			// Iterate through each school
+			data.items.forEach((school: { websites: any; expand: { websites: any } }) => {
+				// Check if the school has 'websites' property
+				if (school.websites && Array.isArray(school.websites)) {
+					// Iterate through each website in the school
+					school.websites.forEach((websiteId) => {
+						// Find the website details using the websiteId
+						const websiteDetails = school.expand.websites.find((web: any) => web.id === websiteId);
 
-			try {
-				const encodedUrl = encodeURIComponent(website.url);
-				const response = await fetch('https://corsproxy.io/?' + website.url);
-				websiteStatuses[website.url] = response.status === 200 ? 'Up' : 'Down';
-				console.log(`Website ${website.url} is ${websiteStatuses[website.url]}`);
-			} catch (error) {
-				console.log('Error:', error);
-				websiteStatuses[website.url] = 'Error';
-			}
+						// Check if the website details are found
+						if (websiteDetails) {
+							// Add the website URL to the list
+							allWebsites.push(websiteDetails.url);
+						}
+					});
+				}
+			});
 		}
+
+		return allWebsites;
 	}
 
-	let websiteStatusesArray = Object.keys(websiteStatuses).map((website) => ({
-		websites: website,
-		status: websiteStatuses[website]
-	}));
-
-	console.table(websiteStatusesArray);
+	// Call the function to get all websites
+	const allWebsites = getAllWebsites(websites_data);
+	console.log(allWebsites);
 
 	return {
 		websites_data: websites_data.items

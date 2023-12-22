@@ -1,16 +1,70 @@
-<script>
+<script lang="ts">
 	import Hero from '../lib/components/Hero.svelte';
-	import SearchBar from '$lib/components/SearchBar.svelte';
 	import WebsiteCard from '$lib/components/WebsiteCard.svelte';
 	import { onMount } from 'svelte';
 
-	// @ts-nocheck
 	// D.E.S.T.I.N.Y.: Davao Educational Sites Tracker Identifying Network Yield
 
 	export let data;
 	const { websites_data } = data;
-	// console.log(websites_data);
-	let hovereffect = 'grayscale hover:grayscale-0 transition ease-in-out'; // test
+
+	let websiteStatuses: { [key: string]: string } = {};
+
+	function getAllWebsites(data: any) {
+		const allWebsites: any = [];
+
+		// Iterate through each school
+		data.forEach((school: { websites: any; expand: { websites: any } }) => {
+			// Check if the school has 'websites' property
+			if (school.websites && Array.isArray(school.websites)) {
+				// Iterate through each website in the school
+				school.websites.forEach((websiteId) => {
+					// Find the website details using the websiteId
+					const websiteDetails = school.expand.websites.find((web: any) => web.id === websiteId);
+
+					// Check if the website details are found
+					if (websiteDetails) {
+						// Add the website URL to the list
+						allWebsites.push(websiteDetails.url);
+					}
+				});
+			}
+		});
+
+		return allWebsites;
+	}
+
+	// Call the function to get all websites
+	const allWebsites = getAllWebsites(websites_data);
+	console.log(allWebsites);
+
+	let statuses: string[] = Array(websites_data.length).fill('Checking...');
+	async function checkStatus() {
+		for (let i = 0; i < allWebsites.length; i++) {
+			try {
+				const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(allWebsites[i]));
+				const actualResponse = new Response(response.body, {
+					status: response.status,
+					statusText: response.statusText,
+					headers: new Headers(response.headers)
+				});
+
+				// Set CORS headers on the server side to avoid security issues
+				actualResponse.headers.append('Access-Control-Allow-Origin', allWebsites[i]);
+
+				statuses[i] = actualResponse.ok ? 'online' : 'experiencing_issues';
+			} catch (error) {
+				statuses[i] = 'Error';
+			}
+			console.log(`${allWebsites[i]}: ${statuses[i]}`);
+		}
+	}
+	onMount(() => {
+		checkStatus();
+	});
+
+	// Display the result
+	// console.log(allWebsites);
 </script>
 
 <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
@@ -39,7 +93,7 @@
 			</div>
 
 			<div class="grid grid-flow-row grid-cols-3 gap-4 py-2 px-2 mt-4">
-				{#each data.expand.websites as website}
+				{#each data.expand.websites as website, i}
 					<WebsiteCard
 						id={data.id}
 						website_name={website.website_name}
@@ -47,6 +101,7 @@
 						logo={data.logo}
 						website_description={website.website_description}
 						url={website.url}
+						status={statuses[i]}
 					/>
 				{/each}
 			</div>
