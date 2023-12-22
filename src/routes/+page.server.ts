@@ -9,36 +9,36 @@ export const load: PageServerLoad = async () => {
 
 	const websites_data: any = await websites_response.json();
 
-	function getAllWebsites(data: any) {
-		const allWebsites: any = [];
+	// function getAllWebsites(data: any) {
+	// 	const allWebsites: any = [];
 
-		// Check if data has 'items' property
-		if (data.items && Array.isArray(data.items)) {
-			// Iterate through each school
-			data.items.forEach((school: { websites: any; expand: { websites: any } }) => {
-				// Check if the school has 'websites' property
-				if (school.websites && Array.isArray(school.websites)) {
-					// Iterate through each website in the school
-					school.websites.forEach((websiteId) => {
-						// Find the website details using the websiteId
-						const websiteDetails = school.expand.websites.find((web: any) => web.id === websiteId);
+	// 	// Check if data has 'items' property
+	// 	if (data.items && Array.isArray(data.items)) {
+	// 		// Iterate through each school
+	// 		data.items.forEach((school: { websites: any; expand: { websites: any } }) => {
+	// 			// Check if the school has 'websites' property
+	// 			if (school.websites && Array.isArray(school.websites)) {
+	// 				// Iterate through each website in the school
+	// 				school.websites.forEach((websiteId) => {
+	// 					// Find the website details using the websiteId
+	// 					const websiteDetails = school.expand.websites.find((web: any) => web.id === websiteId);
 
-						// Check if the website details are found
-						if (websiteDetails) {
-							// Add the website URL to the list
-							allWebsites.push(websiteDetails.url);
-						}
-					});
-				}
-			});
-		}
+	// 					// Check if the website details are found
+	// 					if (websiteDetails) {
+	// 						// Add the website URL to the list
+	// 						allWebsites.push(websiteDetails.url);
+	// 					}
+	// 				});
+	// 			}
+	// 		});
+	// 	}
 
-		return allWebsites;
-	}
+	// 	return allWebsites;
+	// }
 
-	// Call the function to get all websites
-	const allWebsites = getAllWebsites(websites_data);
-	console.log(allWebsites);
+	// // Call the function to get all websites
+	// const allWebsites = getAllWebsites(websites_data);
+	// console.log(allWebsites);
 
 	return {
 		websites_data: websites_data.items

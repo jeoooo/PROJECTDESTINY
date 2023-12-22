@@ -60,7 +60,7 @@
 		}
 	}
 	onMount(() => {
-		checkStatus();
+		// checkStatus();
 	});
 
 	// Display the result
@@ -110,16 +110,10 @@
 	<div class="bg-white mx-[170px] my-20 p-3 border border-black shadow-lg">
 		<div class="flex flex-col justify-center items-center p-4">
 			<p class="text-center font-bold text-4xl font-ibm-plex-sans my-5">Wanna Contribute?</p>
-			<p class=" text-center text-lg font-ibm-plex-sans">
-				Welcome to <strong>DESTINY's Student Portals Status Page!</strong> We value your active participation
-				in enhancing the accuracy and completeness of our database. Your contributions are vital in ensuring
-				that our platform remains a reliable resource for students navigating various educational portals.
-				To add a new school or suggest edits for existing entries, please utilize the provided form.
-				Include the school/site name, URL, current status, and any relevant notes or comments. Your input
-				assists us in keeping track of portal statuses, whether they are operational, or experiencing
-				issues. If you have recommendations for edits on existing entries, kindly specify the changes
-				you propose. Your dedication to updating and expanding DESTINY is truly appreciated, making it
-				an even more invaluable tool for students. Thank you for being an integral part of our community!
+			<p class=" text-center text-normal font-ibm-plex-sans px-14">
+				Help improve and expand <strong>PROJECT DESTINY!</strong> If you would like to add a new
+				school/site to our list or suggest edits for existing entries, please fill out the form
+				below. <br /> Your contributions are invaluable in keeping DESTINY up-to-date and comprehensive.
 			</p>
 			<div class="flex flex-row justify-center items-center w-full">
 				<a
