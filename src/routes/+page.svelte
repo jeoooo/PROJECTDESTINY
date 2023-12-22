@@ -60,7 +60,7 @@
 		}
 	}
 	onMount(() => {
-		// checkStatus();
+		checkStatus();
 	});
 
 	// Display the result
