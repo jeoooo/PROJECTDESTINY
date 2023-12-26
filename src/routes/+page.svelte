@@ -8,8 +8,6 @@
 	export let data;
 	const { websites_data } = data;
 
-	let websiteStatuses: { [key: string]: string } = {};
-
 	function getAllWebsites(data: any) {
 		const allWebsites: any = [];
 
@@ -38,7 +36,11 @@
 	const allWebsites = getAllWebsites(websites_data);
 	console.log(allWebsites);
 
-	let statuses: string[] = Array(websites_data.length).fill('Checking...');
+	let statuses: { [key: string]: string } = {};
+	allWebsites.forEach((website: string) => {
+		statuses[website] = 'Checking...';
+	});
+
 	async function checkStatus() {
 		for (let i = 0; i < allWebsites.length; i++) {
 			try {
@@ -52,13 +54,14 @@
 				// Set CORS headers on the server side to avoid security issues
 				actualResponse.headers.append('Access-Control-Allow-Origin', allWebsites[i]);
 
-				statuses[i] = actualResponse.ok ? 'online' : 'experiencing_issues';
+				statuses[allWebsites[i]] = actualResponse.status === 200 ? 'online' : 'experiencing_issues';
 			} catch (error) {
-				statuses[i] = 'Error';
+				statuses[allWebsites[i]] = 'Error';
 			}
-			console.log(`${allWebsites[i]}: ${statuses[i]}`);
+			console.log(`${allWebsites[i]} : ${statuses[allWebsites[i]]}`);
 		}
 	}
+
 	onMount(() => {
 		checkStatus();
 	});
@@ -93,7 +96,11 @@
 			</div>
 
 			<div class="grid grid-flow-row grid-cols-3 gap-4 py-2 px-2 mt-4">
-				{#each data.expand.websites as website, i}
+				{#each data.expand.websites as website}
+					<!-- 
+					status={statuses[website.url]}
+					status values must be mapped accordingly
+				 -->
 					<WebsiteCard
 						id={data.id}
 						website_name={website.website_name}
@@ -101,7 +108,7 @@
 						logo={data.logo}
 						website_description={website.website_description}
 						url={website.url}
-						status={statuses[i]}
+						status={statuses[website.url]}
 					/>
 				{/each}
 			</div>
