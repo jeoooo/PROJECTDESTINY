@@ -1,10 +1,18 @@
 import type { PageServerLoad } from './$types';
-import { LOCAL_INSTANCE } from '$env/static/private';
+import 'dotenv/config';
 import fetch from 'node-fetch';
 
 export const load: PageServerLoad = async () => {
+	const baseUrl =
+		process.env.NODE_ENV === 'production'
+			? process.env.PRODUCTION_INSTANCE
+			: process.env.LOCAL_INSTANCE;
+
+	// check what instance did we use
+	console.log(`Using base URL: ${baseUrl}`);
+
 	const websites_response = await fetch(
-		'http://127.0.0.1:8090/api/collections/websites/records?expand=websites&sort=school_name'
+		`${baseUrl}collections/websites/records?expand=websites&sort=school_name`
 	);
 
 	const websites_data: any = await websites_response.json();

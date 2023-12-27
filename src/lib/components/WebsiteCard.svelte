@@ -12,6 +12,11 @@
 	export let website_name = 'website_name';
 	export let website_description = 'website_description';
 	export let status;
+
+	const baseUrl =
+		process.env.NODE_ENV === 'production'
+			? process.env.PRODUCTION_INSTANCE
+			: process.env.LOCAL_INSTANCE;
 </script>
 
 <div
@@ -19,7 +24,7 @@
 >
 	<img
 		class="absolute -right-14 h-96 opacity-5"
-		src="http://127.0.0.1:8090/api/files/{collectionId}/{id}/{logo}"
+		src="${baseUrl}files/{collectionId}/{id}/{logo}"
 		alt=""
 		srcset=""
 		style=""

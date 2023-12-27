@@ -68,6 +68,11 @@
 
 	// Display the result
 	// console.log(allWebsites);
+
+	const baseUrl =
+		process.env.NODE_ENV === 'production'
+			? process.env.PRODUCTION_INSTANCE
+			: process.env.LOCAL_INSTANCE;
 </script>
 
 <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
@@ -79,7 +84,7 @@
 			<div class="flex flex-row h-auto items-center">
 				<img
 					class="mx-4 h-32 my-2"
-					src="http://127.0.0.1:8090/api/files/{data.collectionId}/{data.id}/{data.logo}"
+					src="${baseUrl}files/{data.collectionId}/{data.id}/{data.logo}"
 					alt=""
 					srcset=""
 				/>
