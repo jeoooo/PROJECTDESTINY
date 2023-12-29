@@ -6,7 +6,8 @@
 	// D.E.S.T.I.N.Y.: Davao Educational Sites Tracker Identifying Network Yield
 
 	export let data;
-	const { websites_data } = data;
+	const { websites_data, BASE_URL }: any = data;
+	console.log(BASE_URL);
 
 	function getAllWebsites(data: any) {
 		const allWebsites: any = [];
@@ -42,6 +43,7 @@
 	});
 
 	async function checkStatus() {
+		// check if website/s are up or down
 		for (let i = 0; i < allWebsites.length; i++) {
 			try {
 				const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(allWebsites[i]));
@@ -56,7 +58,7 @@
 
 				statuses[allWebsites[i]] = actualResponse.status === 200 ? 'online' : 'experiencing_issues';
 			} catch (error) {
-				statuses[allWebsites[i]] = 'Error';
+				// statuses[allWebsites[i]] = `Error: ${error}`;
 			}
 			console.log(`${allWebsites[i]} : ${statuses[allWebsites[i]]}`);
 		}
@@ -65,14 +67,6 @@
 	onMount(() => {
 		checkStatus();
 	});
-
-	// Display the result
-	// console.log(allWebsites);
-
-	const baseUrl =
-		process.env.NODE_ENV === 'production'
-			? process.env.PRODUCTION_INSTANCE
-			: process.env.LOCAL_INSTANCE;
 </script>
 
 <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
@@ -84,7 +78,7 @@
 			<div class="flex flex-row h-auto items-center">
 				<img
 					class="mx-4 h-32 my-2"
-					src="${baseUrl}files/{data.collectionId}/{data.id}/{data.logo}"
+					src="{BASE_URL}/api/files/{data.collectionId}/{data.id}/{data.logo}"
 					alt=""
 					srcset=""
 				/>
@@ -107,6 +101,7 @@
 					status values must be mapped accordingly
 				 -->
 					<WebsiteCard
+						baseUrl={BASE_URL}
 						id={data.id}
 						website_name={website.website_name}
 						collectionId={data.collectionId}

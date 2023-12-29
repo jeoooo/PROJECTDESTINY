@@ -4,19 +4,14 @@
 	// @ts-nocheck
 	// D.E.S.T.I.N.Y.: Davao Educational Sites Tracker Identifying Network Yield
 	import '../../app.css';
-
-	export let collectionId = 'collectionId';
+	export let baseUrl;
+	export let collectionId;
 	export let id = 'id';
 	export let logo = 'logo';
 	export let url = 'url';
 	export let website_name = 'website_name';
 	export let website_description = 'website_description';
 	export let status;
-
-	const baseUrl =
-		process.env.NODE_ENV === 'production'
-			? process.env.PRODUCTION_INSTANCE
-			: process.env.LOCAL_INSTANCE;
 </script>
 
 <div
@@ -24,7 +19,7 @@
 >
 	<img
 		class="absolute -right-14 h-96 opacity-5"
-		src="${baseUrl}files/{collectionId}/{id}/{logo}"
+		src="{baseUrl}/api/files/{collectionId}/{id}/{logo}"
 		alt=""
 		srcset=""
 		style=""

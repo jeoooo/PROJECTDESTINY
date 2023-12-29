@@ -1,18 +1,20 @@
 import type { PageServerLoad } from './$types';
 import 'dotenv/config';
 import fetch from 'node-fetch';
+import { POCKETBASE_LOCAL_INSTANCE, POCKETBASE_PRODUCTION_INSTANCE } from '$env/static/private';
 
 export const load: PageServerLoad = async () => {
-	const baseUrl =
-		process.env.NODE_ENV === 'production'
-			? process.env.PRODUCTION_INSTANCE
-			: process.env.LOCAL_INSTANCE;
-
+	let baseUrl;
+	if (import.meta.env.MODE === 'production') {
+		baseUrl = POCKETBASE_PRODUCTION_INSTANCE;
+	} else {
+		baseUrl = POCKETBASE_LOCAL_INSTANCE;
+	}
 	// check what instance did we use
 	console.log(`Using base URL: ${baseUrl}`);
 
 	const websites_response = await fetch(
-		`${baseUrl}collections/websites/records?expand=websites&sort=school_name`
+		`${baseUrl}/api/collections/websites/records?expand=websites&sort=school_name`
 	);
 
 	const websites_data: any = await websites_response.json();
@@ -44,11 +46,50 @@ export const load: PageServerLoad = async () => {
 	// 	return allWebsites;
 	// }
 
-	// // Call the function to get all websites
+	// Call the function to get all websites
 	// const allWebsites = getAllWebsites(websites_data);
 	// console.log(allWebsites);
 
+	// async function checkStatus() {
+	// 	const statuses: Record<string, string> = {}; // Declare the statuses variable
+
+	// 	// check if website/s are up or down
+	// 	for (let i = 0; i < allWebsites.length; i++) {
+	// 		try {
+	// 			const response = await fetch(
+	// 				'https://corsproxy.io/?' + encodeURIComponent(allWebsites[i]),
+	// 				{
+	// 					headers: {
+	// 						'Access-Control-Allow-Origin': '*',
+	// 						'Access-Control-Allow-Methods': 'GET',
+	// 						'Access-Control-Allow-Headers': 'Content-Type'
+	// 					}
+	// 				}
+	// 			);
+	// 			const actualResponse = new Response(await response.text(), {
+	// 				// Use await response.text() to get the response body
+	// 				status: response.status,
+	// 				statusText: response.statusText,
+	// 				headers: Object.fromEntries(response.headers) // Convert headers to a plain object
+	// 			});
+
+	// 			statuses[allWebsites[i]] = response.status === 200 ? 'online' : response.status.toString();
+	// 		} catch (error) {
+	// 			statuses[allWebsites[i]] = 'Error';
+	// 		}
+	// 	}
+
+	// 	// Console table the website and status
+	// 	console.table(statuses);
+
+	// 	return statuses;
+	// }
+
+	// checkStatus(); // Call the checkStatus function
+
 	return {
-		websites_data: websites_data.items
+		websites_data: websites_data.items,
+		// website_statuses: checkStatus()
+		BASE_URL: baseUrl
 	};
 };
