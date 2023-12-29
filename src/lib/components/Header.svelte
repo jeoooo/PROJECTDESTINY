@@ -13,7 +13,7 @@
 				<p class="w-max px-6 py-[4px]">Project DESTINY</p>
 			</a>
 			<a
-				href="faq"
+				href="/faq"
 				class="ml-1 w-full px-5 py-[10px] font-ibm-plex-sans text-white hover:text-black transition ease-in-out hover:bg-white"
 			>
 				FAQ
