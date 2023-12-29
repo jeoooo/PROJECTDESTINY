@@ -146,7 +146,7 @@
 	<p class="mx-[350px] my-4 text-base text-justify font-ibm-plex-sans font-normal">
 		You may fill up this
 		<a
-			href="https://github.com/jeoooo/PROJECTDESTINY"
+			href="https://forms.gle/SRDpttRwwoM8Q9BC7"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="text-blue-600 hover:underline-offset-2 hover:underline"
