@@ -15,11 +15,8 @@ Davao Educational Sites Tracker Identifying Network Yield
   
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
-
 [![Powered by Third Party Service](https://img.shields.io/badge/powered%20by-ThirdPartyService-blue.svg)](https://thirdpartyservice.com/)
-
 [![Follow me on GitHub](https://img.shields.io/github/followers/jeoooo?label=Follow&style=social)](https://github.com/jeoooo)
 </div>
   
