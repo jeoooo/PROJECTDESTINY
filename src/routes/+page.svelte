@@ -133,7 +133,7 @@
 					<i class="fa-brands fa-github pl-14 py-1"></i>
 				</a>
 				<a
-					href="https://github.com/jeoooo/PROJECTDESTINY"
+					href="https://forms.gle/SRDpttRwwoM8Q9BC7"
 					target="_blank"
 					rel="noopener noreferrer"
 					class=" flex w-[250px] mx-2 transition ease-in-out my-5 bg-slate-100 pl-5 py-3 font font-ibm-plex-sans border border-black hover:text-white hover:bg-black"
