@@ -43,7 +43,7 @@ This project is written in [Svelte](https://developer.mozilla.org/en-US/docs/Lea
 
 - Real-time Monitoring: Regular checks ensure up-to-the-minute status updates.
 
-- User-Friendly Interface: Easily check HCDC website status with an intuitive design.
+- User-Friendly Interface: Easily check website status with an simplistic design.
 
 - Open-Source: Contribute to the project and enhance its functionality.
 
@@ -55,30 +55,17 @@ This project is written in [Svelte](https://developer.mozilla.org/en-US/docs/Lea
   
 
 - [Node.js](https://nodejs.org/en)
-
 - Node Package Manager (NPM)
-
 - [Pocketbase](https://pocketbase.io/) (v20.0.0+)
 
   
 
 # Table of Contents
-
-  
-
 - [Installation](#installation)
-
 - [Contributing](#contributing)
 
-  
 
 # Installation
-
-  
-
-Provide instructions on how to install your project. Include any dependencies that need to be installed and how to install them.
-
-  
 
 ```bash
 
@@ -92,8 +79,6 @@ npm run dev
 
 ```
 
-  
-
 1. Execute pocketbase.exe from
 
 2. run the pocketbase instance using the following command
@@ -106,8 +91,6 @@ npm run dev
 
 this will open a pocketbase instance at http://127.0.0.1:8090 just like the example below
 
-  
-
 ```bash
 
 2023/12/31 06:47:32 Server started at http://127.0.0.1:8090
@@ -118,46 +101,25 @@ this will open a pocketbase instance at http://127.0.0.1:8090 just like the exam
 
 ```
 
-  
-  
-
 # Additional Resources
-
-  
 
 Wanna contribute? Here are the following resources you can use when working on the HCDC True Site codebase:
 
-  
 
 - Svelte Documentation: [https://svelte.dev/docs/introduction](https://svelte.dev/docs/introduction)
-
 - SvelteKit Documentation: [https://kit.svelte.dev/docs/introduction](https://kit.svelte.dev/docs/introduction)
-
 - Typescript Handbook: [https://www.typescriptlang.org/docs/handbook/intro.html](https://www.typescriptlang.org/docs/handbook/intro.html)
-
 - TailwindCSS Docs (For additional information): [https://tailwindcss.com](https://tailwindcss.com/)
-
 - MDN Web Docs (For additional information): [https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/)
-
 - Pocketbase Documentation: [https://pocketbase.io/docs/](https://pocketbase.io/docs/)
-
-  
 
 # Contributing
 
-  
-
 1. Fork it ([https://github.com/jeoooo/hcdctruesite/fork](https://github.com/jeoooo/hcdctruesite/fork))
-
 2. Create your feature branch (`git checkout -b my-new-feature`)
-
 3. Commit your changes (`git commit -am 'Add some feature'`)
-
 4. Push to the branch (`git push origin my-new-feature`)
-
 5. Create a new Pull Request
-
-  
 
 > [!IMPORTANT]
 > To contribute or suggest schools you may submit [a GitHub Issue](https://github.com/jeoooo/PROJECTDESTINY/issues)
