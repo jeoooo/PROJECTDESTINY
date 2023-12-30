@@ -11,7 +11,7 @@ Davao Educational Sites Tracker Identifying Network Yield
   
 
 ![Project DESTINY](projectdestiny.png)
-</div>
+
   
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -21,7 +21,7 @@ Davao Educational Sites Tracker Identifying Network Yield
 [![Powered by Third Party Service](https://img.shields.io/badge/powered%20by-ThirdPartyService-blue.svg)](https://thirdpartyservice.com/)
 
 [![Follow me on GitHub](https://img.shields.io/github/followers/jeoooo?label=Follow&style=social)](https://github.com/jeoooo)
-
+</div>
   
 
 # Description
