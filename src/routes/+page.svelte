@@ -7,7 +7,7 @@
 
 	export let data;
 	const { websites_data, BASE_URL }: any = data;
-	console.log(BASE_URL);
+	// console.log(BASE_URL);
 
 	function getAllWebsites(data: any) {
 		const allWebsites: any = [];
@@ -35,7 +35,7 @@
 
 	// Call the function to get all websites
 	const allWebsites = getAllWebsites(websites_data);
-	console.log(allWebsites);
+	// console.log(allWebsites);
 
 	let statuses: { [key: string]: string } = {};
 	allWebsites.forEach((website: string) => {
@@ -60,7 +60,8 @@
 			} catch (error) {
 				// statuses[allWebsites[i]] = `Error: ${error}`;
 			}
-			console.log(`${allWebsites[i]} : ${statuses[allWebsites[i]]}`);
+			// ssssshhhh
+			// console.log(`${allWebsites[i]} : ${statuses[allWebsites[i]]}`);
 		}
 	}
 
