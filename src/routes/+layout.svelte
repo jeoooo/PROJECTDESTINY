@@ -12,25 +12,22 @@
 <svelte:head>
 	<title>PROJECT DESTINY</title>
 
-	<meta name="title" content="HCDC True Site" />
-	<meta name="description" content="HCDC True Site: Are HCDC websites down?" />
+	<meta name="title" content="PROJECT DESTINY" />
+	<meta name="description" content="Davao City Student Portal Status Page" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://PROJECTDESTINY.vercel.app/" />
-	<meta property="og:title" content="HCDC True Site" />
-	<meta property="og:description" content="PROJECT DESTINY: Davao Student Portal Status Page" />
-	<meta property="og:image" content="img/linkpreview.png" />
+	<meta property="og:url" content="https://metatags.io/" />
+	<meta property="og:title" content="PROJECT DESTINY" />
+	<meta property="og:description" content="Davao City Student Portal Status Page" />
+	<meta property="og:image" content="https://i.imgur.com/mVrmeuH.png" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://PROJECTDESTINY.vercel.app/" />
-	<meta property="twitter:title" content="HCDC True Site" />
-	<meta
-		property="twitter:description"
-		content="PROJECT DESTINY: Davao Student Portal Status Page"
-	/>
-	<meta property="twitter:image" content="img/linkpreview.png" />
+	<meta property="twitter:url" content="https://metatags.io/" />
+	<meta property="twitter:title" content="PROJECT DESTINY" />
+	<meta property="twitter:description" content="Davao City Student Portal Status Page" />
+	<meta property="twitter:image" content="https://i.imgur.com/mVrmeuH.png" />
 	<!-- Meta Tags Generated with https://metatags.io -->
 </svelte:head>
 {#if $page.status == 200}
