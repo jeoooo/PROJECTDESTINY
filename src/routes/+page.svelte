@@ -79,14 +79,14 @@
 	<meta property="og:url" content="https://metatags.io/" />
 	<meta property="og:title" content="PROJECT DESTINY" />
 	<meta property="og:description" content="Davao City Student Portal Status Page" />
-	<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+	<meta property="og:image" content="link_preview.png" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://metatags.io/" />
 	<meta property="twitter:title" content="PROJECT DESTINY" />
 	<meta property="twitter:description" content="Davao City Student Portal Status Page" />
-	<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+	<meta property="twitter:image" content="link_preview.png" />
 
 	<!-- Meta Tags Generated with https://metatags.io -->
 </svelte:head>
