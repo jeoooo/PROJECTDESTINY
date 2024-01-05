@@ -70,6 +70,27 @@
 	});
 </script>
 
+<svelte:head>
+	<meta name="title" content="PROJECT DESTINY" />
+	<meta name="description" content="Davao City Student Portal Status Page" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://metatags.io/" />
+	<meta property="og:title" content="PROJECT DESTINY" />
+	<meta property="og:description" content="Davao City Student Portal Status Page" />
+	<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://metatags.io/" />
+	<meta property="twitter:title" content="PROJECT DESTINY" />
+	<meta property="twitter:description" content="Davao City Student Portal Status Page" />
+	<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+
+	<!-- Meta Tags Generated with https://metatags.io -->
+</svelte:head>
+
 <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
 	<Hero />
 	<h1 class="text-4xl font-bold font-ibm-plex-sans mb-8 mx-[170px]">Schools</h1>
@@ -97,10 +118,6 @@
 
 			<div class="grid grid-flow-row grid-cols-3 gap-4 py-2 px-2 mt-4">
 				{#each data.expand.websites as website}
-					<!-- 
-					status={statuses[website.url]}
-					status values must be mapped accordingly
-				 -->
 					<WebsiteCard
 						baseUrl={BASE_URL}
 						id={data.id}

@@ -39,6 +39,27 @@
 	console.log(schools);
 </script>
 
+<svelte:head>
+	<meta name="title" content="PROJECT DESTINY" />
+	<meta name="description" content="Davao City Student Portal Status Page" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://metatags.io/" />
+	<meta property="og:title" content="PROJECT DESTINY" />
+	<meta property="og:description" content="Davao City Student Portal Status Page" />
+	<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://metatags.io/" />
+	<meta property="twitter:title" content="PROJECT DESTINY" />
+	<meta property="twitter:description" content="Davao City Student Portal Status Page" />
+	<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+
+	<!-- Meta Tags Generated with https://metatags.io -->
+</svelte:head>
+
 <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
 	<div class=" bg-[#172651] mb-8 pb-6">
 		<h1
