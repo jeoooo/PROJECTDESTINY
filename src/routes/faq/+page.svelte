@@ -137,7 +137,12 @@
 	</p>
 	<ol class="mx-[350px] my-4 list-disc pl-10 text-base text-justify font-ibm-plex-sans font-normal">
 		{#each schools as { acronym, school_name }}
-			<li>{school_name} ({acronym})</li>
+			<li>
+				{school_name}
+				{#if acronym}
+					({acronym})
+				{/if}
+			</li>
 		{/each}
 	</ol>
 

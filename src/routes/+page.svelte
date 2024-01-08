@@ -107,7 +107,9 @@
 				<div class=" flex flex-col w-full">
 					<div class="text-4xl font-bold font-ibm-plex-sans mb-2">
 						{data.school_name}
-						({data.acronym})
+						{#if data.acronym}
+							({data.acronym})
+						{/if}
 					</div>
 
 					<div class="text-s mb-2 font-ibm-plex-sans font-light text-justify">
