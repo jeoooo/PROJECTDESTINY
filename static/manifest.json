@@ -4,7 +4,7 @@
     "start_url": "/",
     "display": "standalone",
     "background_color": "#172651",
-    "theme": "#172651",
+    "theme_color": "#172651",
     "description": "Project DESTINY: Davao City Student Portal Status Page",
     "icons": [
         {
