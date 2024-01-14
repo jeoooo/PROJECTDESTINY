@@ -22,7 +22,7 @@
 		src="{baseUrl}/api/files/{collectionId}/{id}/{logo}"
 		alt=""
 		srcset=""
-		style=""
+		style="user-select: none;"
 	/>
 	<a
 		href={url}
