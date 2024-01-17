@@ -18,6 +18,7 @@ Davao Educational Sites Tracker Identifying Network Yield
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 [![Powered by Third Party Service](https://img.shields.io/badge/powered%20by-ThirdPartyService-blue.svg)](https://thirdpartyservice.com/)
 [![Follow me on GitHub](https://img.shields.io/github/followers/jeoooo?label=Follow&style=social)](https://github.com/jeoooo)
+[![Behance](https://img.shields.io/badge/Project_DESTINY-Project_DESTINY?logo=Behance&color=%231769FF)](https://www.behance.net/gallery/189152357/PROJECT-DESTINY)
 </div>
   
 
@@ -31,11 +32,6 @@ Project DESTINY  is an unofficial, open-source Uptime Status Checker dedicated 
 
 This project is written in [Svelte](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Svelte_getting_started) and uses [SvelteKit](https://joyofcode.xyz/what-is-sveltekit) as its meta-framework. It conducts routine checks by leveraging [proxy servers](https://www.fortinet.com/resources/cyberglossary/proxy-server#:~:text=A%20proxy%20server%20is%20a,web%20pages%20they%20visit%20online.) to check the uptime of the websites. The backend of this project uses [Pocketbase](https://pocketbase.io/).
 
-  
-
-# Why create this project?
-
-  
 
 # Features:
 
@@ -79,9 +75,9 @@ npm run dev
 
 ```
 
-1. Execute pocketbase.exe from
+1. Execute pocketbase.exe from the root folder.
 
-2. run the pocketbase instance using the following command
+2. Run the pocketbase instance using the following command
 
 ```bash
 
