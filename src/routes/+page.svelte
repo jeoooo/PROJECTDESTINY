@@ -9,6 +9,22 @@
 	const { websites_data, BASE_URL }: any = data;
 	// console.log(BASE_URL);
 
+	/**
+	 * Fetches JSON data from '/schools.json' and assigns it to the 'schools' variable.
+	 * @returns {Promise<void>} A promise that resolves when the JSON data is fetched and assigned.
+	 */
+	let schools;
+	async function getJSONdata() {
+		const response = await fetch('/schools.json');
+		schools = await response.json();
+		console.log(schools);
+	}
+
+	// get all website data from JSON
+	function getAllWebsitesfromJSON(data: any) {
+		const allWebsites: any = [];
+	}
+
 	function getAllWebsites(data: any) {
 		const allWebsites: any = [];
 
@@ -67,6 +83,7 @@
 
 	onMount(() => {
 		checkStatus();
+		getJSONdata();
 	});
 </script>
 
