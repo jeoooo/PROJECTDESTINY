@@ -9,19 +9,19 @@
                     "type": "official_website",
                     "url": "https://www.hcdc.edu.ph/",
                     "display_url": "hcdc.edu.ph",
-                    "description": "The official_website of The Holy Cross of Davao College"
+                    "website_description": "The official_website of The Holy Cross of Davao College"
                 },
                 {
                     "type": "student_portal",
                     "url": "https://studentportal.hcdc.edu.ph/login",
                     "display_url": "studentportal.hcdc.edu.ph",
-                    "description": "The official student_portal of The Holy Cross of Davao College"
+                    "website_description": "The official student_portal of The Holy Cross of Davao College"
                 },
                 {
                     "type": "Learning Management System (LMS)",
                     "url": "http://cetlms.hcdc.edu.ph/",
                     "display_url": "cetlms.hcdc.edu.ph",
-                    "description": "The official Learning Management System (LMS) of the Holy Cross of Davao College - College of Engineering and Technology"
+                    "website_description": "The official Learning Management System (LMS) of the Holy Cross of Davao College - College of Engineering and Technology"
                 }
             ],
             "description": "The Holy Cross of Davao College is a Catholic private basic and higher education institution run by the Archdiocese of Davao in Davao City, Philippines.",
@@ -36,19 +36,19 @@
                     "type": "official_website",
                     "url": "https://www.uic.edu.ph/",
                     "display_url": "uic.edu.ph",
-                    "description": "official_website of  the University of Immaculate Conception"
+                    "website_description": "official_website of  the University of Immaculate Conception"
                 },
                 {
                     "type": "student_portal",
                     "url": "https://my.uic.edu.ph/index.cfm?fa=login.login_show",
                     "display_url": "my.uic.edu.ph",
-                    "description": "Official student_portal of the University of Immaculate Conception"
+                    "website_description": "Official student_portal of the University of Immaculate Conception"
                 },
                 {
                     "type": "website",
                     "url": "https://myuic.nedpals.xyz/#/login",
                     "display_url": "myuic.nedpals.xyz",
-                    "description": "An unofficial, third-party student_portal website for students of the University of the Immaculate Conception"
+                    "website_description": "An unofficial, third-party student_portal website for students of the University of the Immaculate Conception"
                 }
             ],
             "description": "The Holy Cross of Davao College is a Catholic private basic and higher education institution run by the Archdiocese of Davao in Davao City, Philippines.",
@@ -57,31 +57,31 @@
         {
             "name": "University of Mindanao",
             "acronym": "UM",
-            "logo": "uic.png",
+            "logo": "um.png",
             "websites": [
                 {
                     "type": "official_website",
                     "url": "https://umindanao.edu.ph",
                     "display_url": "umindanao.edu.ph",
-                    "description": "official_website of the University of Mindanao"
+                    "website_description": "official_website of the University of Mindanao"
                 },
                 {
                     "type": "website",
                     "url": "https://mis.umin.edu.ph/MIS/login",
                     "display_url": "mis.umin.edu.ph",
-                    "description": "Official Academic Services Portal of the University of Mindanao"
+                    "website_description": "Official Academic Services Portal of the University of Mindanao"
                 },
                 {
                     "type": "website",
                     "url": "https://umindanao.blackboard.com/",
                     "display_url": "umindanao.blackboard.com",
-                    "description": "Official Learning Management System (LMS) of the University of Mindanao"
+                    "website_description": "Official Learning Management System (LMS) of the University of Mindanao"
                 },
                 {
                     "type": "student_portal",
                     "url": "https://student.umindanao.edu.ph/login",
                     "display_url": "student.umindanao.edu.ph",
-                    "description": "Official student_portal of the University of Mindanao"
+                    "website_description": "Official student_portal of the University of Mindanao"
                 }
             ],
             "description": "The University of Mindanao is a private, non-sectarian university in the southern Philippine island of Mindanao. It is located in Davao City. Established in 1946, the University of Mindanao has ten branches spread over thirteen campuses in Southern Mindanao.",

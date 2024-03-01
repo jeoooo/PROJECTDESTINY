@@ -1,88 +1,51 @@
 <script lang="ts">
 	import Hero from '../lib/components/Hero.svelte';
-	import WebsiteCard from '$lib/components/WebsiteCard.svelte';
+	import WebsiteCardNew from '$lib/components/WebsiteCard_new.svelte';
 	import { onMount } from 'svelte';
 
-	// D.E.S.T.I.N.Y.: Davao Educational Sites Tracker Identifying Network Yield
+	interface Website {
+		type: string;
+		url: string;
+		display_url: string;
+		website_description: string;
+	}
 
-	export let data;
-	const { websites_data, BASE_URL }: any = data;
-	// console.log(BASE_URL);
+	interface School {
+		name: string;
+		logo: string;
+		acronym: string;
+		description: string;
+		websites: Website[];
+		// Add other properties as needed
+	}
 
-	/**
-	 * Fetches JSON data from '/schools.json' and assigns it to the 'schools' variable.
-	 * @returns {Promise<void>} A promise that resolves when the JSON data is fetched and assigned.
-	 */
-	let schools;
-	async function getJSONdata() {
+	let schools: School[] = [];
+
+	async function getJSONdata(): Promise<void> {
 		const response = await fetch('/schools.json');
-		schools = await response.json();
+		const data = await response.json();
+		schools = data.schools; // Access the 'schools' property of the fetched data
 		console.log(schools);
 	}
 
-	// get all website data from JSON
-	function getAllWebsitesfromJSON(data: any) {
-		const allWebsites: any = [];
-	}
-
-	function getAllWebsites(data: any) {
-		const allWebsites: any = [];
-
-		// Iterate through each school
-		data.forEach((school: { websites: any; expand: { websites: any } }) => {
-			// Check if the school has 'websites' property
-			if (school.websites && Array.isArray(school.websites)) {
-				// Iterate through each website in the school
-				school.websites.forEach((websiteId) => {
-					// Find the website details using the websiteId
-					const websiteDetails = school.expand.websites.find((web: any) => web.id === websiteId);
-
-					// Check if the website details are found
-					if (websiteDetails) {
-						// Add the website URL to the list
-						allWebsites.push(websiteDetails.url);
-					}
-				});
+	async function checkStatus(url: string) {
+		try {
+			const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(url));
+			if (response.ok) {
+				// The status is in the 2xx range, so the site is up
+				return 'online';
+			} else {
+				// The status is not in the 2xx range, so the site is experiencing issues
+				return 'experiencing_issues';
 			}
-		});
-
-		return allWebsites;
-	}
-
-	// Call the function to get all websites
-	const allWebsites = getAllWebsites(websites_data);
-	// console.log(allWebsites);
-
-	let statuses: { [key: string]: string } = {};
-	allWebsites.forEach((website: string) => {
-		statuses[website] = 'Checking...';
-	});
-
-	async function checkStatus() {
-		// check if website/s are up or down
-		for (let i = 0; i < allWebsites.length; i++) {
-			try {
-				const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(allWebsites[i]));
-				const actualResponse = new Response(response.body, {
-					status: response.status,
-					statusText: response.statusText,
-					headers: new Headers(response.headers)
-				});
-
-				// Set CORS headers on the server side to avoid security issues
-				actualResponse.headers.append('Access-Control-Allow-Origin', allWebsites[i]);
-
-				statuses[allWebsites[i]] = actualResponse.status === 200 ? 'online' : 'experiencing_issues';
-			} catch (error) {
-				// statuses[allWebsites[i]] = `Error: ${error}`;
-			}
-			// ssssshhhh
-			// console.log(`${allWebsites[i]} : ${statuses[allWebsites[i]]}`);
+		} catch (error) {
+			console.error(error);
+			// An error occurred, so the site is experiencing issues
+			return 'experiencing_issues';
 		}
 	}
 
 	onMount(() => {
-		checkStatus();
 		getJSONdata();
 	});
 </script>
@@ -112,40 +75,38 @@
 	<Hero />
 	<h1 class="text-4xl font-bold font-ibm-plex-sans mb-8 mx-[170px]">Schools</h1>
 	<!-- <SearchBar /> -->
-	{#each websites_data as data}
+	{#each schools as school, index (index)}
 		<div class=" mx-40 mb-5 h-full">
 			<div class="flex flex-row h-auto items-center">
-				<img
+				<!-- <img
 					class="mx-4 h-32 my-2"
 					src="{BASE_URL}/api/files/{data.collectionId}/{data.id}/{data.logo}"
 					alt=""
 					srcset=""
-				/>
+				/> -->
+				<img class="mx-4 h-32 my-2" src="school_logos/{school.logo}" alt="" srcset="" />
 				<div class=" flex flex-col w-full">
 					<div class="text-4xl font-bold font-ibm-plex-sans mb-2">
-						{data.school_name}
-						{#if data.acronym}
-							({data.acronym})
+						{school.name}
+						{#if school.acronym}
+							({school.acronym})
 						{/if}
 					</div>
 
 					<div class="text-s mb-2 font-ibm-plex-sans font-light text-justify">
-						{data.school_description}
+						{school.description}
 					</div>
 				</div>
 			</div>
 
 			<div class="grid grid-flow-row grid-cols-3 gap-4 py-2 px-2 mt-4">
-				{#each data.expand.websites as website}
-					<WebsiteCard
-						baseUrl={BASE_URL}
-						id={data.id}
-						website_name={website.website_name}
-						collectionId={data.collectionId}
-						logo={data.logo}
+				{#each school.websites as website}
+					<WebsiteCardNew
+						display_url={website.display_url}
+						logo={school.logo}
 						website_description={website.website_description}
 						url={website.url}
-						status={statuses[website.url]}
+						status={checkStatus(website.url)}
 					/>
 				{/each}
 			</div>
