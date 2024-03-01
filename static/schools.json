@@ -9,16 +9,16 @@
                     "type": "official_website",
                     "url": "https://www.hcdc.edu.ph/",
                     "display_url": "hcdc.edu.ph",
-                    "website_description": "The official_website of The Holy Cross of Davao College"
+                    "website_description": "The official website of The Holy Cross of Davao College"
                 },
                 {
                     "type": "student_portal",
                     "url": "https://studentportal.hcdc.edu.ph/login",
                     "display_url": "studentportal.hcdc.edu.ph",
-                    "website_description": "The official student_portal of The Holy Cross of Davao College"
+                    "website_description": "The official student portal of The Holy Cross of Davao College"
                 },
                 {
-                    "type": "Learning Management System (LMS)",
+                    "type": "lms",
                     "url": "http://cetlms.hcdc.edu.ph/",
                     "display_url": "cetlms.hcdc.edu.ph",
                     "website_description": "The official Learning Management System (LMS) of the Holy Cross of Davao College - College of Engineering and Technology"
@@ -36,19 +36,19 @@
                     "type": "official_website",
                     "url": "https://www.uic.edu.ph/",
                     "display_url": "uic.edu.ph",
-                    "website_description": "official_website of  the University of Immaculate Conception"
+                    "website_description": "Official website of the University of Immaculate Conception"
                 },
                 {
                     "type": "student_portal",
                     "url": "https://my.uic.edu.ph/index.cfm?fa=login.login_show",
                     "display_url": "my.uic.edu.ph",
-                    "website_description": "Official student_portal of the University of Immaculate Conception"
+                    "website_description": "Official student portal of the University of Immaculate Conception"
                 },
                 {
                     "type": "website",
                     "url": "https://myuic.nedpals.xyz/#/login",
                     "display_url": "myuic.nedpals.xyz",
-                    "website_description": "An unofficial, third-party student_portal website for students of the University of the Immaculate Conception"
+                    "website_description": "An unofficial, third-party student portal website for students of the University of the Immaculate Conception"
                 }
             ],
             "description": "The Holy Cross of Davao College is a Catholic private basic and higher education institution run by the Archdiocese of Davao in Davao City, Philippines.",
@@ -63,7 +63,7 @@
                     "type": "official_website",
                     "url": "https://umindanao.edu.ph",
                     "display_url": "umindanao.edu.ph",
-                    "website_description": "official_website of the University of Mindanao"
+                    "website_description": "Official Website of the University of Mindanao"
                 },
                 {
                     "type": "website",
@@ -81,10 +81,121 @@
                     "type": "student_portal",
                     "url": "https://student.umindanao.edu.ph/login",
                     "display_url": "student.umindanao.edu.ph",
-                    "website_description": "Official student_portal of the University of Mindanao"
+                    "website_description": "Official student portal of the University of Mindanao"
                 }
             ],
             "description": "The University of Mindanao is a private, non-sectarian university in the southern Philippine island of Mindanao. It is located in Davao City. Established in 1946, the University of Mindanao has ten branches spread over thirteen campuses in Southern Mindanao.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "University of Southeastern Philippines",
+            "acronym": "USEP",
+            "logo": "usep.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://www.usep.edu.ph/",
+                    "display_url": "usep.edu.ph",
+                    "website_description": "Official Website of the University of Southeastern Philippines"
+                },
+                {
+                    "type": "student_portal",
+                    "url": "https://portal.usep.edu.ph/login",
+                    "display_url": "portal.usep.edu.ph",
+                    "website_description": "Official Student Portal of the University of Southeastern Philippines"
+                }
+            ],
+            "description": "The University of Southeastern Philippines is a public, research, coeducational, regional state university based in Davao City, Davao del Sur, Philippines.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Mapua Malayan Colleges Mindanao",
+            "acronym": "MMCM",
+            "logo": "mmcm.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://mcm.edu.ph/",
+                    "display_url": "mcm.edu.ph",
+                    "website_description": "Official website of Mapúa Malayan Colleges Mindanao"
+                }
+            ],
+            "description": "Mapúa Malayan Colleges Mindanao is a branch encompassing Mapua University’s technological and academic excellence in Mindanao.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Ateneo de Davao University",
+            "acronym": "ADDU",
+            "logo": "addu.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://www.addu.edu.ph/",
+                    "display_url": "addu.edu.ph",
+                    "website_description": "Official website of the Ateneo de Davao University"
+                }
+            ],
+            "description": "Ateneo de Davao University is a private Catholic basic and higher education institution run by the Philippine Province of the Society of Jesus in Davao City, Davao del Sur, Philippines.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Lyceum of the Philippines - Davao",
+            "acronym": "LPU-Davao",
+            "logo": "lpu_davao.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://www.lpudavao.edu.ph/",
+                    "display_url": "lpudavao.edu.ph",
+                    "website_description": "Official website of Lyceum of the Philippines - Davao"
+                }
+            ],
+            "description": "The Lyceum of the Philippines – Davao is a higher education institution located in Buhangin, Davao City. An affiliate campus of the Lyceum of the Philippines University system, the institution is the first LPU campus built outside Luzon",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Jose Maria College Foundation, Inc.",
+            "acronym": "JMC",
+            "logo": "jmc.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://www.lpudavao.edu.ph/",
+                    "display_url": "lpudavao.edu.ph",
+                    "website_description": "Official Website of Jose Maria College Foundation, Inc"
+                }
+            ],
+            "description": "Jose Maria College Foundation, Inc. is a private non-sectarian and non-profit educational institution in Davao City, Philippines.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "San Pedro College",
+            "acronym": "SPC",
+            "logo": "spc.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://www.spcdavao.edu.ph/home/",
+                    "display_url": "spcdavao.edu.ph",
+                    "website_description": "Official Website of San Pedro College"
+                }
+            ],
+            "description": "San Pedro College is a private, Catholic, research, coeducational basic and higher education institution run by the Dominican Sisters of the Trinity in Davao City, Philippines.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Davao Doctors College",
+            "acronym": "DDC",
+            "logo": "ddc.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://www.davaodoctors.edu.ph/",
+                    "display_url": "davaodoctors.edu.ph",
+                    "website_description": "Official Website of Davao Doctors College"
+                }
+            ],
+            "description": "Davao Doctors College is a private educational institution founded in 1975 in Davao City, Philippines",
             "hex_code": "#003366"
         }
     ]

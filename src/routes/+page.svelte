@@ -25,23 +25,43 @@
 		const response = await fetch('/schools.json');
 		const data = await response.json();
 		schools = data.schools; // Access the 'schools' property of the fetched data
+
+		// Define the order of website types
+		const order = ['official_website', 'student_portal', 'lms', 'website'];
+
+		// Sort the websites array for each school
+		for (let school of schools) {
+			school.websites.sort((a, b) => order.indexOf(a.type) - order.indexOf(b.type));
+		}
+
+		// Sort the schools array alphabetically by the name property
+		schools.sort((a, b) => a.name.localeCompare(b.name));
 		console.log(schools);
 	}
 
-	async function checkStatus(url: string) {
-		try {
-			const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(url));
-			if (response.ok) {
-				// The status is in the 2xx range, so the site is up
-				return 'online';
-			} else {
-				// The status is not in the 2xx range, so the site is experiencing issues
-				return 'experiencing_issues';
+	async function checkStatus() {
+		// check if website/s are up or down
+		for (let school of schools) {
+			for (let website of school.websites) {
+				try {
+					const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(website.url));
+					const actualResponse = new Response(response.body, {
+						status: response.status,
+						statusText: response.statusText,
+						headers: new Headers(response.headers)
+					});
+
+					// Set CORS headers on the server side to avoid security issues
+					actualResponse.headers.append('Access-Control-Allow-Origin', website.url);
+
+					let status: { [key: string]: string } = {};
+					status[website.url] = actualResponse.status === 200 ? 'online' : 'experiencing_issues';
+				} catch (error) {
+					// statuses[website.url] = `Error: ${error}`;
+				}
+				// ssssshhhh
+				// console.log(`${website.url} : ${statuses[website.url]}`);
 			}
-		} catch (error) {
-			console.error(error);
-			// An error occurred, so the site is experiencing issues
-			return 'experiencing_issues';
 		}
 	}
 
@@ -74,16 +94,9 @@
 <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
 	<Hero />
 	<h1 class="text-4xl font-bold font-ibm-plex-sans mb-8 mx-[170px]">Schools</h1>
-	<!-- <SearchBar /> -->
 	{#each schools as school, index (index)}
 		<div class=" mx-40 mb-5 h-full">
 			<div class="flex flex-row h-auto items-center">
-				<!-- <img
-					class="mx-4 h-32 my-2"
-					src="{BASE_URL}/api/files/{data.collectionId}/{data.id}/{data.logo}"
-					alt=""
-					srcset=""
-				/> -->
 				<img class="mx-4 h-32 my-2" src="school_logos/{school.logo}" alt="" srcset="" />
 				<div class=" flex flex-col w-full">
 					<div class="text-4xl font-bold font-ibm-plex-sans mb-2">
@@ -98,7 +111,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="grid grid-flow-row grid-cols-3 gap-4 py-2 px-2 mt-4">
 				{#each school.websites as website}
 					<WebsiteCardNew
@@ -106,7 +118,7 @@
 						logo={school.logo}
 						website_description={website.website_description}
 						url={website.url}
-						status={checkStatus(website.url)}
+						status={checkStatus()}
 					/>
 				{/each}
 			</div>
