@@ -184,18 +184,111 @@
             "hex_code": "#003366"
         },
         {
-            "name": "Davao Doctors College",
-            "acronym": "DDC",
-            "logo": "ddc.png",
+            "name": " Asian International School Aeronautics and Technology",
+            "acronym": "AISAT",
+            "logo": "aisat.png",
             "websites": [
                 {
                     "type": "official_website",
-                    "url": "https://www.davaodoctors.edu.ph/",
-                    "display_url": "davaodoctors.edu.ph",
-                    "website_description": "Official Website of Davao Doctors College"
+                    "url": "https://aisat.edu.ph/",
+                    "display_url": "aisat.edu.ph",
+                    "website_description": "The official website of the Asian International School Aeronautics and Technology (AISAT)"
+                },
+                {
+                    "type": "official_website",
+                    "url": "https://student.aisatportal.com/",
+                    "display_url": "student.aisatportal.com",
+                    "website_description": "The official student portal of the Asian International School Aeronautics and Technology (AISAT)"
                 }
             ],
-            "description": "Davao Doctors College is a private educational institution founded in 1975 in Davao City, Philippines",
+            "description": "The Asian International School Aeronautics and Technology (AISAT) was formally established in 2011 by a group of business and technical experts who saw the need for world class aviation training in Davao City.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Brokenshire College",
+            "logo": "brokenshire.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "http://www.brokenshire.edu.ph/index.php/home",
+                    "display_url": "brokenshire.edu.ph",
+                    "website_description": "Official Website of Brokenshire College"
+                }
+            ],
+            "description": "Brokenshire College is a private, non-profit basic and higher education institution administered by the United Church of Christ in the Philippines (UCCP) in Davao City, Philippines.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Assumption College of Davao",
+            "acronym": "ACD",
+            "logo": "assumption_davao.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://www.acd.edu.ph/acd/",
+                    "display_url": "acd.edu.ph",
+                    "website_description": "Official Website of Assumption College of Davao"
+                }
+            ],
+            "description": "The Assumption College of Davao is a private Catholic basic and higher education institution run by the Missionaries of the Assumption in Davao City, Philippines",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Holy Child College of Davao",
+            "acronym": "HCCD",
+            "logo": "hccd.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://holychild.edu.ph/",
+                    "display_url": "holychild.edu.ph",
+                    "website_description": "The Official website of the Holy Child College of Davao"
+                }
+            ],
+            "description": "The Holy Child College of Davao is a Bible-based Christian School in the Philippines in 1981.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Philippine College of Technology Davao",
+            "acronym": "PCT",
+            "logo": "pct.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://pctdavao.edu.ph/",
+                    "display_url": "pctdavao.edu.ph",
+                    "website_description": "The Official website of Philippine College of Technology Davao"
+                }
+            ],
+            "description": "The Philippine College of Technology was established in 1993 in Davao City, Philippines",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Agro Industrial Foundation College of the Philippines",
+            "logo": "agro.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://agrodavao.com/",
+                    "display_url": "agrodavao.com",
+                    "website_description": "The Official website of Agro Industrial Foundation College of the Philippines"
+                }
+            ],
+            "description": "The Agro Industrial Foundation College of the Philippines is a Pioneer Maritime Institution in Mindanao since 1978.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Joji Ilagan Career Center Foundation Inc.",
+            "logo": "joji_ilagan_center.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://www.jojiilagancareercenter.com/",
+                    "display_url": "jojiilagancareercenter.com",
+                    "website_description": "The Official website of Joji Ilagan Career Center Inc. College of Business and Tourism"
+                }
+            ],
+            "description": "Joji Ilagan Career Center Foundation Inc. was founded in 1982 and is proud of its tradition and its track record of meeting the individual's professional and personal needs.",
             "hex_code": "#003366"
         }
     ]
