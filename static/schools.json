@@ -290,6 +290,56 @@
             ],
             "description": "Joji Ilagan Career Center Foundation Inc. was founded in 1982 and is proud of its tradition and its track record of meeting the individual's professional and personal needs.",
             "hex_code": "#003366"
+        },
+        {
+            "name": "Philippine Women's College of Davao",
+            "acronym": "PWC",
+            "logo": "pwc.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://pwc.edu.ph/",
+                    "display_url": "pwc.edu.ph",
+                    "website_description": "The Official website of the Philippine Women's College of Davao"
+                },
+                {
+                    "type": "student_portal",
+                    "url": "http://sa.pwc.edu.ph:8339/",
+                    "display_url": "sa.pwc.edu.ph",
+                    "website_description": "The Official Student Portal of Philippine Women's College of Davao"
+                }
+            ],
+            "description": "Philippine Women's College of Davao is a prestigious school located in Davao founded in 1953.",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Samson Polytechnic College of Davao",
+            "acronym": "PWC",
+            "logo": "samson.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://samsonpcd.edu.ph/",
+                    "display_url": "samsonpcd.edu.ph",
+                    "website_description": "The official website of Samson Polytechnic College of Davao"
+                }
+            ],
+            "description": "Samson Polytechnic College of Davao is an academic institution in Davao City, Philippines founded by Consuelo M. Samson in 1960",
+            "hex_code": "#003366"
+        },
+        {
+            "name": "Mindanao Medical Foundation College",
+            "logo": "mmfc.png",
+            "websites": [
+                {
+                    "type": "official_website",
+                    "url": "https://samsonpcd.edu.ph/",
+                    "display_url": "samsonpcd.edu.ph",
+                    "website_description": "The official website of Samson Polytechnic College of Davao"
+                }
+            ],
+            "description": "Samson Polytechnic College of Davao is an academic institution in Davao City, Philippines founded by Consuelo M. Samson in 1960",
+            "hex_code": "#003366"
         }
     ]
 }
