@@ -16,52 +16,52 @@
 		acronym: string;
 		description: string;
 		websites: Website[];
-		// Add other properties as needed
 	}
 
 	let schools: School[] = [];
 
 	async function getJSONdata(): Promise<void> {
-		const response = await fetch('/schools.json');
-		const data = await response.json();
-		schools = data.schools; // Access the 'schools' property of the fetched data
+		try {
+			const response = await fetch('/schools.json');
+			const data = await response.json();
+			schools = data.schools;
 
-		// Define the order of website types
-		const order = ['official_website', 'student_portal', 'lms', 'website'];
+			// Define the order of website types
+			const order = ['official_website', 'student_portal', 'lms', 'website'];
 
-		// Sort the websites array for each school
-		for (let school of schools) {
-			school.websites.sort((a, b) => order.indexOf(a.type) - order.indexOf(b.type));
+			// Sort the websites array for each school
+			for (let school of schools) {
+				school.websites.sort((a, b) => order.indexOf(a.type) - order.indexOf(b.type));
+			}
+
+			// Sort the schools array alphabetically by the name property
+			schools.sort((a, b) => a.name.localeCompare(b.name));
+			console.log(schools);
+		} catch (error) {
+			console.error('Error fetching school data:', error);
 		}
-
-		// Sort the schools array alphabetically by the name property
-		schools.sort((a, b) => a.name.localeCompare(b.name));
-		console.log(schools);
 	}
 
-	async function checkStatus() {
-		// check if website/s are up or down
-		for (let school of schools) {
-			for (let website of school.websites) {
-				try {
-					const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(website.url));
-					const actualResponse = new Response(response.body, {
-						status: response.status,
-						statusText: response.statusText,
-						headers: new Headers(response.headers)
-					});
+	async function checkStatus(url: string): Promise<string> {
+		try {
+			const response: any = await fetch('https://corsproxy.io/?' + url);
+			const actualResponse: any = new Response(response.body, {
+				status: response.status,
+				statusText: response.statusText,
+				headers: new Headers(response.headers)
+			});
 
-					// Set CORS headers on the server side to avoid security issues
-					actualResponse.headers.append('Access-Control-Allow-Origin', website.url);
+			// Set CORS headers on the server side to avoid security issues
+			actualResponse.headers.append('Access-Control-Allow-Origin', url);
+			actualResponse.headers.append('Access-Control-Allow-Methods', 'GET');
 
-					let status: { [key: string]: string } = {};
-					status[website.url] = actualResponse.status === 200 ? 'online' : 'experiencing_issues';
-				} catch (error) {
-					// statuses[website.url] = `Error: ${error}`;
-				}
-				// ssssshhhh
-				// console.log(`${website.url} : ${statuses[website.url]}`);
-			}
+			console.log('Website checked:', url);
+			console.log('Status checked:', actualResponse.status);
+
+			return actualResponse.status === 200 ? 'online' : 'experiencing_issues';
+		} catch (error) {
+			console.error('Error checking status:', error);
+			return 'error';
 		}
 	}
 
@@ -118,7 +118,7 @@
 						logo={school.logo}
 						website_description={website.website_description}
 						url={website.url}
-						status={checkStatus()}
+						status={checkStatus(website.url)}
 					/>
 				{/each}
 			</div>
