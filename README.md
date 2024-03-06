@@ -109,13 +109,66 @@ Wanna contribute? Here are the following resources you can use when working on t
 - MDN Web Docs (For additional information): [https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/)
 - Pocketbase Documentation: [https://pocketbase.io/docs/](https://pocketbase.io/docs/)
 
+
 # Contributing
 
-1. Fork it ([https://github.com/jeoooo/hcdctruesite/fork](https://github.com/jeoooo/hcdctruesite/fork))
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+This is the updated way to contribute after migrating from Pocketbase to JSON for managing school data.
+
+1. Fork the repository by navigating to [https://github.com/jeoooo/hcdctruesite/fork](https://github.com/jeoooo/hcdctruesite/fork).
+2. Create a new branch for your feature (`git checkout -b my-new-feature`).
+3. Open the `static/schools.json` file in the repository.
+4. Add a new entry for the school you want to contribute in the following format:
+
+```json
+{
+    "name": "Mock School",
+    "acronym": "MS",
+    "logo": "mock_school_logo.png",
+    "websites": [
+        {
+            "type": "official_website",
+            "url": "https://www.mockschool.edu.ph/",
+            "display_url": "mockschool.edu.ph",
+            "website_description": "The official website of Mock School"
+        },
+        {
+            "type": "student_portal",
+            "url": "https://studentportal.mockschool.edu.ph/login",
+            "display_url": "studentportal.mockschool.edu.ph",
+            "website_description": "The official student portal of Mock School"
+        },
+        {
+            "type": "lms",
+            "url": "http://lms.mockschool.edu.ph/",
+            "display_url": "lms.mockschool.edu.ph",
+            "website_description": "The official Learning Management System (LMS) of Mock School"
+        }
+    ],
+    "description": "Mock School is a fictional educational institution providing high-quality education.",
+    "hex_code": "#336699"
+}
+```
+
+### Description of JSON Keys:
+- `name`: The name of the school.
+- `acronym`: ***(Optional, can be removed)*** The acronym or abbreviation of the school's name.
+- `logo`: The filename of the school's logo image (accepted image formats:  jpg and png).
+- `websites`: An array containing information about the school's websites, including their type, URL, display URL, and description.
+  - `type`: The type of website (e.g., official website, student portal, LMS).
+  - `url`: The URL of the website.
+  - `display_url`: The display URL shown to users.
+  - `website_description`: A description of the website.
+- `description`: A brief description of the school.
+- `hex_code`: The hexadecimal color code representing the school's branding color.
+1. Fill in the details for the new school, including its name, acronym, logo filename, website URLs, description, and hex code.
+2. Save the changes and commit them with a descriptive message (`git commit -am 'Add Mock School'`).
+3. Push your changes to your forked repository (`git push origin my-new-school`).
+4. Create a new Pull Request by visiting [https://github.com/jeoooo/hcdctruesite/compare](https://github.com/jeoooo/hcdctruesite/compare) and selecting your branch.
+5. Provide a clear title and description for your Pull Request, summarizing the changes you've made.
+6.  Submit the Pull Request for review.
+7.  Once reviewed and approved, your changes will be merged into the main repository.
+
+```
 
 > [!IMPORTANT]
 > To contribute or suggest schools you may submit [a GitHub Issue](https://github.com/jeoooo/PROJECTDESTINY/issues)
