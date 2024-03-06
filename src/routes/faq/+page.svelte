@@ -1,42 +1,64 @@
-<!-- 
-	⣿⣿⣿⠿⠛⠉⢉⣀⡀⠀⠉⠉⠛⠿⣿⣿⣿
-	⣿⡿⠁⠀⣴⣾⣿⣿⣿⣿⣦⡀⠀⠀⠈⠻⣿
-	⣿⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀ ⢻
-	⣧⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀ ⢸
-	⣿⣆⡀⠀⣠⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⣸
-	⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⣠⣿
-	⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢀⣴⣿⣿
-	⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⣠⣾⣿⣿⣿
-	⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⢀⣾⣿⣿⣿⣿⣿
-	⣿⣿⣿⣿⣿⣿⣿⣿⠁⢰⣿⣿⣿⣿⣿⣿⣿
-	⣿⣿⣿⣿⣿⣿⣿⡏⠀⣿⣿⣿⣿⣿⣿⣿⣿
-	⣿⣿⣿⣿⣿⣿⣿⣧⣴⣿⣿⣿⣿⣿⣿⣿⣿
-	⣿⣿⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿
-	⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿
-	⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿
-	⣿⣿⣿⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿
-
-	FAQ
-	1. What is Project DESTINY?
-	2. How does the website tracker work?
-	3. Which schools in Davao City are included in the tracker?
-	4. Can I rely on the information provided by the tracker?
-	5. Is the website tracker accessible on mobile devices?
-	6. How can I report issues or inaccuracies with the uptime data?
-	7. Is the service free to use?
-	8. Can I get notifications for downtime events?
-	9. How can I support or contribute to the uptime tracker?
-	10. Are there any privacy concerns with using the uptime tracker?
- -->
-
 <script lang="ts">
 	import { formatDate } from '$lib/utils/formatDate';
 	import { onMount } from 'svelte';
 
+	/**
+	 *
+	 * 	⣿⣿⣿⠿⠛⠉⢉⣀⡀⠀⠉⠉⠛⠿⣿⣿⣿
+	 *  ⣿⡿⠁⠀⣴⣾⣿⣿⣿⣿⣦⡀⠀⠀⠈⠻⣿
+	 *  ⣿⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀ ⢻
+	 *  ⣧⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀ ⢸
+	 *  ⣿⣆⡀⠀⣠⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⣸
+	 *  ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⣠⣿
+	 *  ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢀⣴⣿⣿
+	 *  ⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⣠⣾⣿⣿⣿
+	 *  ⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⢀⣾⣿⣿⣿⣿⣿
+	 *  ⣿⣿⣿⣿⣿⣿⣿⣿⠁⢰⣿⣿⣿⣿⣿⣿⣿
+	 *  ⣿⣿⣿⣿⣿⣿⣿⡏⠀⣿⣿⣿⣿⣿⣿⣿⣿
+	 *  ⣿⣿⣿⣿⣿⣿⣿⣧⣴⣿⣿⣿⣿⣿⣿⣿⣿
+	 *  ⣿⣿⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿
+	 *  ⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠙⣿⣿⣿⣿⣿⣿
+	 *  ⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿
+	 *  ⣿⣿⣿⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿
+	 *
+	 *  	FAQ
+	 *
+	 *  	1. 	What is Project DESTINY?
+	 *  	2. 	How does the website tracker work?
+	 *  	3. 	Which schools in Davao City are included in the tracker?
+	 *  	4. 	Can I rely on the information provided by the tracker?
+	 *  	5. 	Is the website tracker accessible on mobile devices?
+	 *  	6. 	How can I report issues or inaccuracies with the uptime data?
+	 *  	7. 	Is the service free to use?
+	 *  	8. 	Can I get notifications for downtime events?
+	 *  	9. 	How can I support or contribute to the uptime tracker?
+	 *  	10. Are there any privacy concerns with using the uptime tracker?
+	 *
+	 */
+
 	export let data;
-	const { schools, date } = data;
+	const { date } = data;
 	console.log(date);
-	console.log(schools);
+
+	interface School {
+		name: string;
+		logo: string;
+		acronym: string;
+		description: string;
+	}
+
+	let schools: School[] = [];
+
+	async function getJSONdata(): Promise<void> {
+		const response = await fetch('/schools.json');
+		const data = await response.json();
+		schools = data.schools; // Access the 'schools' property of the fetched data
+		console.log(schools);
+	}
+
+	onMount(() => {
+		getJSONdata();
+	});
 </script>
 
 <svelte:head>
@@ -136,11 +158,11 @@
 		{/if}
 	</p>
 	<ol class="mx-[350px] my-4 list-disc pl-10 text-base text-justify font-ibm-plex-sans font-normal">
-		{#each schools as { acronym, school_name }}
+		{#each schools as school, index (index)}
 			<li>
-				{school_name}
-				{#if acronym}
-					({acronym})
+				{school.name}
+				{#if school.acronym}
+					({school.acronym})
 				{/if}
 			</li>
 		{/each}
