@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Hero from '../lib/components/Hero.svelte';
+	import Hero from '$lib/components/Hero.svelte';
 	import WebsiteCardNew from '$lib/components/WebsiteCard_new.svelte';
 	import { onMount } from 'svelte';
 
@@ -12,24 +12,20 @@
 
 	// Function to check the status of all websites
 	async function checkStatus() {
-		// Iterate over each school object
-		for (const school of websites_data) {
-			// Iterate over each website within the school
-			for (const website of school.websites) {
-				try {
+		try {
+			// Iterate over each school object
+			for (const school of websites_data) {
+				// Iterate over each website within the school
+				for (const website of school.websites) {
 					let url = website.url;
-					if (!url.startsWith('http://') && !url.startsWith('https://')) {
-						url = 'http://' + url; // Assuming http:// if no protocol is specified
-					}
 
 					const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(url));
 					const status = response.status === 200 ? 'online' : 'experiencing_issues';
 					console.log(`${url}: ${status}`);
-					return status;
-				} catch (error) {
-					console.error('Error checking status for', website.url, ':', error);
 				}
 			}
+		} catch (error) {
+			console.error('Error checking status:', error);
 		}
 	}
 
@@ -37,9 +33,6 @@
 	onMount(() => {
 		checkStatus();
 	});
-
-	// Log the data
-	console.log('Websites Data:', websites_data);
 </script>
 
 <svelte:head>
