@@ -13,7 +13,7 @@
 	async function checkStatusByUrl(url) {
 		try {
 			const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(url));
-			return response.status === 200 ? 'online' : 'experiencing_issues';
+			return response.status === 200 || response.status === 302 ? 'online' : 'experiencing_issues';
 		} catch (error) {
 			console.error('Error checking status for', url, ':', error);
 			return 'error';

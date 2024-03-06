@@ -304,7 +304,7 @@
                 },
                 {
                     "type": "student_portal",
-                    "url": "http://sa.pwc.edu.ph:8339/",
+                    "url": "http://sa.pwc.edu.ph:8339",
                     "display_url": "sa.pwc.edu.ph",
                     "website_description": "The Official Student Portal of Philippine Women's College of Davao"
                 }
