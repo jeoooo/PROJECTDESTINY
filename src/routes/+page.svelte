@@ -3,71 +3,43 @@
 	import WebsiteCardNew from '$lib/components/WebsiteCard_new.svelte';
 	import { onMount } from 'svelte';
 
-	interface Website {
-		type: string;
-		url: string;
-		display_url: string;
-		website_description: string;
-	}
+	export let data: {
+		websites_data: any[];
+	};
 
-	interface School {
-		name: string;
-		logo: string;
-		acronym: string;
-		description: string;
-		websites: Website[];
-	}
+	// Extract websites_data from the data object
+	const { websites_data } = data;
 
-	let schools: School[] = [];
+	// Function to check the status of all websites
+	async function checkStatus() {
+		// Iterate over each school object
+		for (const school of websites_data) {
+			// Iterate over each website within the school
+			for (const website of school.websites) {
+				try {
+					let url = website.url;
+					if (!url.startsWith('http://') && !url.startsWith('https://')) {
+						url = 'http://' + url; // Assuming http:// if no protocol is specified
+					}
 
-	async function getJSONdata(): Promise<void> {
-		try {
-			const response = await fetch('/schools.json');
-			const data = await response.json();
-			schools = data.schools;
-
-			// Define the order of website types
-			const order = ['official_website', 'student_portal', 'lms', 'website'];
-
-			// Sort the websites array for each school
-			for (let school of schools) {
-				school.websites.sort((a, b) => order.indexOf(a.type) - order.indexOf(b.type));
+					const response = await fetch('https://corsproxy.io/?' + encodeURIComponent(url));
+					const status = response.status === 200 ? 'online' : 'experiencing_issues';
+					console.log(`${url}: ${status}`);
+					return status;
+				} catch (error) {
+					console.error('Error checking status for', website.url, ':', error);
+				}
 			}
-
-			// Sort the schools array alphabetically by the name property
-			schools.sort((a, b) => a.name.localeCompare(b.name));
-			console.log(schools);
-		} catch (error) {
-			console.error('Error fetching school data:', error);
 		}
 	}
 
-	async function checkStatus(url: string): Promise<string> {
-		try {
-			const response: any = await fetch('https://corsproxy.io/?' + url);
-			const actualResponse: any = new Response(response.body, {
-				status: response.status,
-				statusText: response.statusText,
-				headers: new Headers(response.headers)
-			});
-
-			// Set CORS headers on the server side to avoid security issues
-			actualResponse.headers.append('Access-Control-Allow-Origin', url);
-			actualResponse.headers.append('Access-Control-Allow-Methods', 'GET');
-
-			console.log('Website checked:', url);
-			console.log('Status checked:', actualResponse.status);
-
-			return actualResponse.status === 200 ? 'online' : 'experiencing_issues';
-		} catch (error) {
-			console.error('Error checking status:', error);
-			return 'error';
-		}
-	}
-
+	// Call the checkStatus function when the component is mounted
 	onMount(() => {
-		getJSONdata();
+		checkStatus();
 	});
+
+	// Log the data
+	console.log('Websites Data:', websites_data);
 </script>
 
 <svelte:head>
@@ -87,43 +59,39 @@
 	<meta property="twitter:title" content="PROJECT DESTINY" />
 	<meta property="twitter:description" content="Davao City Student Portal Status Page" />
 	<meta property="twitter:image" content="https://i.imgur.com/mVrmeuH.png" />
-
 	<!-- Meta Tags Generated with https://metatags.io -->
 </svelte:head>
 
 <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
 	<Hero />
+
 	<h1 class="text-4xl font-bold font-ibm-plex-sans mb-8 mx-[170px]">Schools</h1>
-	{#each schools as school, index (index)}
+	{#each websites_data as data}
 		<div class=" mx-40 mb-5 h-full">
 			<div class="flex flex-row h-auto items-center">
-				<img class="mx-4 h-32 my-2" src="school_logos/{school.logo}" alt="" srcset="" />
+				<img class="mx-4 h-32 my-2" src="school_logos/{data.logo}" alt="" srcset="" />
 				<div class=" flex flex-col w-full">
-					<div class="text-4xl font-bold font-ibm-plex-sans mb-2">
-						{school.name}
-						{#if school.acronym}
-							({school.acronym})
-						{/if}
-					</div>
+					<div class="text-4xl font-bold font-ibm-plex-sans mb-2">{data.name}</div>
 
 					<div class="text-s mb-2 font-ibm-plex-sans font-light text-justify">
-						{school.description}
+						{data.description}
 					</div>
 				</div>
 			</div>
+
 			<div class="grid grid-flow-row grid-cols-3 gap-4 py-2 px-2 mt-4">
-				{#each school.websites as website}
+				{#each data.websites as website}
 					<WebsiteCardNew
 						display_url={website.display_url}
-						logo={school.logo}
+						logo={'data.logo'}
 						website_description={website.website_description}
 						url={website.url}
-						status={checkStatus(website.url)}
 					/>
 				{/each}
 			</div>
 		</div>
 	{/each}
+
 	<div class="bg-white mx-[170px] my-20 p-3 border border-black shadow-lg">
 		<div class="flex flex-col justify-center items-center p-4">
 			<p class="text-center font-bold text-4xl font-ibm-plex-sans my-5">Wanna Contribute?</p>
