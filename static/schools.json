@@ -333,12 +333,12 @@
             "websites": [
                 {
                     "type": "official_website",
-                    "url": "https://samsonpcd.edu.ph/",
-                    "display_url": "samsonpcd.edu.ph",
-                    "website_description": "The official website of Samson Polytechnic College of Davao"
+                    "url": "https://mmfcdavao.com/",
+                    "display_url": "mmfcdavao.com",
+                    "website_description": "The Official website of Mindanao Medical Foundation College"
                 }
             ],
-            "description": "Samson Polytechnic College of Davao is an academic institution in Davao City, Philippines founded by Consuelo M. Samson in 1960",
+            "description": "Mindanao Medical Foundation College is a private, non-sectarian medical college in Davao, Philippines.",
             "hex_code": "#003366"
         }
     ]
