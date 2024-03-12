@@ -314,7 +314,6 @@
         },
         {
             "name": "Samson Polytechnic College of Davao",
-            "acronym": "PWC",
             "logo": "samson.png",
             "websites": [
                 {
@@ -329,6 +328,7 @@
         },
         {
             "name": "Mindanao Medical Foundation College",
+            "acronym": "MMFC",
             "logo": "mmfc.png",
             "websites": [
                 {
