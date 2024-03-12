@@ -2,6 +2,7 @@
     "schools": [
         {
             "name": "Holy Cross of Davao College",
+            "abbreviation": "hcdc",
             "acronym": "HCDC",
             "logo": "hcdc.png",
             "websites": [
@@ -29,6 +30,7 @@
         },
         {
             "name": "University of Immaculate Conception",
+            "abbreviation": "uic",
             "acronym": "UIC",
             "logo": "uic.png",
             "websites": [
@@ -56,6 +58,7 @@
         },
         {
             "name": "University of Mindanao",
+            "abbreviation": "um",
             "acronym": "UM",
             "logo": "um.png",
             "websites": [
@@ -89,6 +92,7 @@
         },
         {
             "name": "University of Southeastern Philippines",
+            "abbreviation": "usep",
             "acronym": "USEP",
             "logo": "usep.png",
             "websites": [
@@ -110,6 +114,7 @@
         },
         {
             "name": "Mapua Malayan Colleges Mindanao",
+            "abbreviation": "mmcm",
             "acronym": "MMCM",
             "logo": "mmcm.png",
             "websites": [
@@ -125,6 +130,7 @@
         },
         {
             "name": "Ateneo de Davao University",
+            "abbreviation": "addu",
             "acronym": "ADDU",
             "logo": "addu.png",
             "websites": [
@@ -155,6 +161,7 @@
         },
         {
             "name": "Jose Maria College Foundation, Inc.",
+            "abbreviation": "jmc",
             "acronym": "JMC",
             "logo": "jmc.png",
             "websites": [
@@ -170,6 +177,7 @@
         },
         {
             "name": "San Pedro College",
+            "abbreviation": "spc",
             "acronym": "SPC",
             "logo": "spc.png",
             "websites": [
@@ -185,6 +193,7 @@
         },
         {
             "name": " Asian International School Aeronautics and Technology",
+            "abbreviation": "aisat",
             "acronym": "AISAT",
             "logo": "aisat.png",
             "websites": [
@@ -206,6 +215,7 @@
         },
         {
             "name": "Brokenshire College",
+            "abbreviation": "brokenshire",
             "logo": "brokenshire.png",
             "websites": [
                 {
@@ -220,6 +230,7 @@
         },
         {
             "name": "Assumption College of Davao",
+            "abbreviation": "acd",
             "acronym": "ACD",
             "logo": "assumption_davao.png",
             "websites": [
@@ -235,6 +246,7 @@
         },
         {
             "name": "Holy Child College of Davao",
+            "abbreviation": "hccd",
             "acronym": "HCCD",
             "logo": "hccd.png",
             "websites": [
@@ -250,6 +262,7 @@
         },
         {
             "name": "Philippine College of Technology Davao",
+            "abbreviation": "pct",
             "acronym": "PCT",
             "logo": "pct.png",
             "websites": [
@@ -265,6 +278,7 @@
         },
         {
             "name": "Agro Industrial Foundation College of the Philippines",
+            "abbreviation": "agro",
             "logo": "agro.png",
             "websites": [
                 {
@@ -279,6 +293,7 @@
         },
         {
             "name": "Joji Ilagan Career Center Foundation Inc.",
+            "abbreviation": "joji_ilagan",
             "logo": "joji_ilagan_center.png",
             "websites": [
                 {
@@ -293,6 +308,7 @@
         },
         {
             "name": "Philippine Women's College of Davao",
+            "abbreviation": "pwc",
             "acronym": "PWC",
             "logo": "pwc.png",
             "websites": [
@@ -314,6 +330,7 @@
         },
         {
             "name": "Samson Polytechnic College of Davao",
+            "abbreviation": "samson",
             "acronym": "PWC",
             "logo": "samson.png",
             "websites": [
@@ -329,6 +346,7 @@
         },
         {
             "name": "Mindanao Medical Foundation College",
+            "abbreviation": "mmfc",
             "logo": "mmfc.png",
             "websites": [
                 {
