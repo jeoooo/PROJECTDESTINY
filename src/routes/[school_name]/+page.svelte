@@ -46,7 +46,7 @@
 		<div class="absolute inset-0 bg-[#172651] opacity-80"></div>
 		<img
 			class="w-full h-full object-cover"
-			src="https://www.davaocity.gov.ph/wp-content/uploads/2019/08/CIO_0183-e1592302052541.jpg"
+			src="/school_buildings/{school}.png"
 			alt=""
 			srcset=""
 			style="object-position: center top; bottom: 20px; left: 20px;"
@@ -56,23 +56,24 @@
 			<img src="/school_logos/addu.png" class="h-40 p-4" alt="" srcset="" />
 		</div>
 	</div>
-	<div class=" w-auto h-fit flex flex-col justify-center items-center mx-32">
+	<div class=" w-auto h-fit flex flex-col justify-center items-center mx-80">
 		<div class="flex flex-row w-full mx-80 my-5 p-4 border border-black">
 			<div class="flex flex-row">
 				<div class="flex flex-col">
 					<div class="flex flex-row mr-4">
-						<p>uic.edu.ph</p>
-						<p>https://uic.edu.ph</p>
+						<h1 class="text-4xl mt-2">uic.edu.ph</h1>
+						<div class="h-fit ml-4 relative inline-flex top-[20px]">
+							<p>Online</p>
+							<div class="relative rounded-full h-2 w-2 bg-green-500 top-[10px] ml-2"></div>
+						</div>
 					</div>
-					<p>test</p>
-					<p>
+					<div class="my-4">badges</div>
+					<div>
 						The University of the Immaculate Conception is a private Catholic basic and higher
 						education institution administered by the Religious of the Virgin Mary in Davao City,
 						Davao del Sur, Philippines.
-					</p>
+					</div>
 				</div>
-
-				<div class="flex justify-center items-center">Online</div>
 			</div>
 		</div>
 	</div>
