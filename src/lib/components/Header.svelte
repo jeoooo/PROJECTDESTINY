@@ -18,12 +18,6 @@
 			>
 				FAQ
 			</a>
-			<!-- <a
-				href="#home"
-				class="ml-1 w-full px-5 py-[10px] font-ibm-plex-sans text-white hover:text-black transition ease-in-out hover:bg-white"
-			>
-				About
-			</a> -->
 		</div>
 	</div>
 </nav>

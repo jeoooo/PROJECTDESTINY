@@ -9,7 +9,7 @@ export const load: PageServerLoad = async () => {
 		// Sort schools alphabetically by name
 		allSchools.sort((a, b) => a.name.localeCompare(b.name));
 
-		console.log(schoolsData);
+		// console.log(schoolsData);
 
 		// Initialize an array to store website statuses
 		// const websiteStatuses: {

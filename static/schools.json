@@ -146,6 +146,7 @@
         },
         {
             "name": "Lyceum of the Philippines - Davao",
+            "abbreviation": "lpu",
             "acronym": "LPU-Davao",
             "logo": "lpu_davao.png",
             "websites": [
@@ -230,7 +231,7 @@
         },
         {
             "name": "Assumption College of Davao",
-            "abbreviation": "acd",
+            "abbreviation": "assumption",
             "acronym": "ACD",
             "logo": "assumption_davao.png",
             "websites": [

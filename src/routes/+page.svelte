@@ -56,63 +56,45 @@
 </svelte:head>
 
 <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
-	<Hero />
+	<div class="h-96 w-full relative">
+		<div class="absolute inset-0 bg-[#172651] opacity-80"></div>
+		<img
+			class="w-full h-full object-cover"
+			src="https://www.davaocity.gov.ph/wp-content/uploads/2019/08/CIO_0183-e1592302052541.jpg"
+			alt=""
+			srcset=""
+			style="object-position: center top; top: 50px; left: 20px;"
+		/>
+		<div class="absolute inset-0 flex flex-col items-center justify-center">
+			<h1 class="text-white text-4xl font-bold">PROJECT DESTINY</h1>
 
-	<h1 class="text-4xl font-bold font-ibm-plex-sans mb-8 mx-[170px]">Schools</h1>
-	{#each websites_data as data}
-		<div class=" mx-40 mb-5 h-full">
-			<div class="flex flex-row h-auto items-center">
-				<img class="mx-4 h-32 my-2" src="school_logos/{data.logo}" alt="" srcset="" />
-				<div class=" flex flex-col w-full">
-					<div class="text-4xl font-bold font-ibm-plex-sans mb-2">{data.name}</div>
-
-					<div class="text-s mb-2 font-ibm-plex-sans font-light text-justify">
-						{data.description}
-					</div>
-				</div>
-			</div>
-
-			<div class="grid grid-flow-row grid-cols-3 gap-4 py-2 px-2 mt-4">
-				{#each data.websites as website}
-					<WebsiteCardNew
-						display_url={website.display_url}
-						logo={'data.logo'}
-						website_description={website.website_description}
-						url={website.url}
-					/>
-				{/each}
-			</div>
+			<h2 class="text-white text-2xl mt-4 py-4">
+				<strong>D</strong>avao
+				<strong>E</strong>ducational
+				<strong>S</strong>ites
+				<strong>T</strong>racker
+				<strong>I</strong>dentifying
+				<strong>N</strong>etwork
+				<strong>Y</strong>ield
+			</h2>
+			<h2 class="text-white text-xl mt-4">Davao City Student Portal Status Page</h2>
 		</div>
-	{/each}
+	</div>
 
-	<div class="bg-white mx-[170px] my-20 p-3 border border-black shadow-lg">
-		<div class="flex flex-col justify-center items-center p-4">
-			<p class="text-center font-bold text-4xl font-ibm-plex-sans my-5">Wanna Contribute?</p>
-			<p class=" text-center text-normal font-ibm-plex-sans px-14">
-				Help improve and expand <strong>PROJECT DESTINY!</strong> If you would like to add a new
-				school/site to our list or suggest edits for existing entries, please fill out the form
-				below. <br /> Your contributions are invaluable in keeping DESTINY up-to-date and comprehensive.
-			</p>
-			<div class="flex flex-row justify-center items-center w-full">
-				<a
-					href="https://github.com/jeoooo/PROJECTDESTINY"
-					target="_blank"
-					rel="noopener noreferrer"
-					class=" flex w-[250px] mx-2 transition ease-in-out my-5 bg-slate-100 pl-5 py-3 font font-ibm-plex-sans border border-black hover:text-white hover:bg-black"
-				>
-					GitHub Repository
-					<i class="fa-brands fa-github pl-14 py-1"></i>
+	<div class="flex flex-col items-center">
+		<h1 class="text-5xl font-bold mt-8">Select School</h1>
+		<div class="w-fit grid grid-cols-3 gap-2 mt-4">
+			{#each websites_data as data}
+				<a href={data.abbreviation} rel="noopener noreferrer">
+					<div
+						class="w-[450px] h-60 bg-orange-100 border border-[#172651] flex flex-col items-center justify-center hover:scale-105 transition ease-in-out"
+					>
+						<img class="h-32 mb-4" src="school_logos/{data.logo}" alt="" srcset="" />
+						<span class="text-center">{data.name}</span>
+					</div>
 				</a>
-				<a
-					href="https://forms.gle/SRDpttRwwoM8Q9BC7"
-					target="_blank"
-					rel="noopener noreferrer"
-					class=" flex w-[250px] mx-2 transition ease-in-out my-5 bg-slate-100 pl-5 py-3 font font-ibm-plex-sans border border-black hover:text-white hover:bg-black"
-				>
-					Suggest Edits
-					<i class="fa-solid fa-pen-to-square pl-[90px] py-1"></i>
-				</a>
-			</div>
+			{/each}
 		</div>
 	</div>
 </body>
+``
