@@ -10,7 +10,14 @@
 	};
 
 	// Extract the websites array from the props object
-	const { websites } = data.props;
+	const { websites, foundSchool } = data.props;
+
+	// Update the data object
+	data = {
+		...data,
+		websites,
+		foundSchool
+	};
 
 	// console.log(websites);
 	// Iterate over each website object in the websites array
@@ -45,15 +52,26 @@
 	<div class="h-96 w-full relative flex items-center justify-center">
 		<div class="absolute inset-0 bg-[#172651] opacity-80"></div>
 		<img
-			class="w-full h-full object-cover"
+			class="w-full h-full object-cover select-none"
 			src="/school_buildings/{school}.png"
 			alt=""
 			srcset=""
 			style="object-position: center top; bottom: 20px; left: 20px;"
 		/>
 
-		<div class="absolute top-[200px] left-[320px] bg-white">
-			<img src="/school_logos/addu.png" class="h-40 p-4" alt="" srcset="" />
+		<div class="absolute top-[200px] left-[320px] mr-32">
+			<div class="flex flex-row">
+				<img
+					src={`/school_logos/${data.foundSchool.logo}`}
+					class="h-40 w-auto p-4 select-none bg-white mr-4"
+					alt=""
+					srcset=""
+				/>
+				<div class="flex flex-col w-[1000px]">
+					<p class="text-white text-4xl font-bold mb-14">{data.foundSchool.name}</p>
+					<p class="mt-4 text-white">{data.foundSchool.description}</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class=" w-auto h-fit flex flex-col justify-center items-center mx-80">
