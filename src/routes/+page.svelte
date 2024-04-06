@@ -66,9 +66,9 @@
 			style="object-position: center top; top: 50px; left: 20px;"
 		/>
 		<div class="absolute inset-0 flex flex-col items-center justify-center">
-			<h1 class="text-white text-4xl font-bold">PROJECT DESTINY</h1>
+			<h1 class="text-white text-4xl font-bold font-ibm-plex-sans">PROJECT DESTINY</h1>
 
-			<h2 class="text-white text-2xl mt-4 py-4">
+			<h2 class="text-white text-2xl mt-4 py-4 font-ibm-plex-sans">
 				<strong>D</strong>avao
 				<strong>E</strong>ducational
 				<strong>S</strong>ites
@@ -77,17 +77,19 @@
 				<strong>N</strong>etwork
 				<strong>Y</strong>ield
 			</h2>
-			<h2 class="text-white text-xl mt-4">Davao City Student Portal Status Page</h2>
+			<h2 class="text-white text-xl mt-4 font-ibm-plex-sans">
+				Davao City Student Portal Status Page
+			</h2>
 		</div>
 	</div>
 
 	<div class="flex flex-col items-center">
-		<h1 class="text-5xl font-bold mt-8">Select School</h1>
+		<h1 class="text-5xl font-bold mt-8 font-ibm-plex-sans">Select School</h1>
 		<div class="w-fit grid grid-cols-3 gap-2 mt-4">
 			{#each websites_data as data}
 				<a href={data.abbreviation} rel="noopener noreferrer">
 					<div
-						class="w-[450px] h-60 bg-orange-100 border border-[#172651] flex flex-col items-center justify-center hover:scale-105 transition ease-in-out"
+						class="w-[450px] h-60 bg-orange-100 border font-ibm-plex-sans border-[#172651] flex flex-col items-center justify-center hover:scale-105 transition ease-in-out"
 					>
 						<img class="h-32 mb-4" src="school_logos/{data.logo}" alt="" srcset="" />
 						<span class="text-center">{data.name}</span>
