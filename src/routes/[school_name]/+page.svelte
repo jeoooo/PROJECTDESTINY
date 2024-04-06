@@ -69,30 +69,30 @@
 				/>
 				<div class="flex flex-col w-[1000px]">
 					<p class="text-white text-4xl font-bold mb-14">{data.foundSchool.name}</p>
-					<p class="mt-4 text-white">{data.foundSchool.description}</p>
+					<p class="-mt-4 text-white">{data.foundSchool.description}</p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class=" w-auto h-fit flex flex-col justify-center items-center mx-80">
-		<div class="flex flex-row w-full mx-80 my-5 p-4 border border-black">
-			<div class="flex flex-row">
-				<div class="flex flex-col">
-					<div class="flex flex-row mr-4">
-						<h1 class="text-4xl mt-2">uic.edu.ph</h1>
-						<div class="h-fit ml-4 relative inline-flex top-[20px]">
-							<p>Online</p>
-							<div class="relative rounded-full h-2 w-2 bg-green-500 top-[10px] ml-2"></div>
+		{#each data.foundSchool.websites as website}
+			<div class="flex flex-row w-full mx-80 my-5 p-4 border border-black">
+				<div class="flex flex-row">
+					<div class="flex flex-col">
+						<div class="flex flex-row mr-4">
+							<h1 class="text-4xl mt-2">{website.display_url}</h1>
+							<div class="h-fit ml-4 relative inline-flex top-[20px]">
+								<p>Online</p>
+								<div class="relative rounded-full h-2 w-2 bg-green-500 top-[10px] ml-2"></div>
+							</div>
 						</div>
-					</div>
-					<div class="my-4">badges</div>
-					<div>
-						The University of the Immaculate Conception is a private Catholic basic and higher
-						education institution administered by the Religious of the Virgin Mary in Davao City,
-						Davao del Sur, Philippines.
+						<div class="my-4">badges</div>
+						<div>
+							{website.website_description}
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		{/each}
 	</div>
 </body>
