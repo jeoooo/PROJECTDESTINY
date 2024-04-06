@@ -77,21 +77,23 @@
 	<div class=" w-auto h-fit flex flex-col justify-center items-center mx-80">
 		{#each data.foundSchool.websites as website}
 			<div class="flex flex-row w-full mx-80 my-5 p-4 border border-black">
-				<div class="flex flex-row">
-					<div class="flex flex-col">
-						<div class="flex flex-row mr-4">
-							<h1 class="text-4xl mt-2">{website.display_url}</h1>
-							<div class="h-fit ml-4 relative inline-flex top-[20px]">
-								<p>Online</p>
-								<div class="relative rounded-full h-2 w-2 bg-green-500 top-[10px] ml-2"></div>
+				<a href={website.url} target="_blank" rel="noopener noreferrer">
+					<div class="flex flex-row">
+						<div class="flex flex-col">
+							<div class="flex flex-row mr-4">
+								<h1 class="text-4xl mt-2">{website.display_url}</h1>
+								<div class="h-fit ml-4 relative inline-flex top-[20px]">
+									<p>Online</p>
+									<div class="relative rounded-full h-2 w-2 bg-green-500 top-[10px] ml-2"></div>
+								</div>
+							</div>
+							<div class="my-4">badges</div>
+							<div>
+								{website.website_description}
 							</div>
 						</div>
-						<div class="my-4">badges</div>
-						<div>
-							{website.website_description}
-						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		{/each}
 	</div>
