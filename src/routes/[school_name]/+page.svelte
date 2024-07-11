@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SchoolHero from './../../lib/new-components/SchoolHero.svelte';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	// Extract the school name from the page parameters
@@ -48,7 +49,7 @@
 	});
 </script>
 
-<body class="flex flex-col w-full h-full mb-auto bg-slate-100">
+<!-- <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
 	<div class="h-96 w-full relative flex items-center justify-center">
 		<div class="absolute inset-0 bg-[#172651] opacity-80"></div>
 		<img
@@ -97,4 +98,32 @@
 			</div>
 		{/each}
 	</div>
-</body>
+</body> -->
+
+<SchoolHero
+	school_buildings="/school_buildings/{school}.png"
+	school_description={data.foundSchool.description}
+	school_name={data.foundSchool.name}
+	school_logo={`/school_logos/${data.foundSchool.logo}`}
+/>
+
+<div class="max-w-screen-xl mx-auto">
+	{#each data.foundSchool.websites as website}
+		<div class="my-5 p-4 border border-black">
+			<a
+				href={website.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="flex flex-col md:flex-row items-center h-full"
+			>
+				<h1 class="text-2xl md:text-4xl mb-2 md:mb-0 mr-4">{website.display_url}</h1>
+				<div class="flex items-center">
+					<div class="relative rounded-full h-2 w-2 bg-green-500 mr-2"></div>
+					<p class="text-sm md:text-base">Online</p>
+				</div>
+			</a>
+			<div class="my-4">badges</div>
+			<p class="text-sm md:text-base">{website.website_description}</p>
+		</div>
+	{/each}
+</div>

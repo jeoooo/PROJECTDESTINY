@@ -1,5 +1,7 @@
 <script lang="ts">
-	import Hero from '$lib/components/Hero.svelte';
+	// import Hero from './../lib/components/Hero.svelte';
+	// import Hero from '$lib/components/Hero.svelte';
+	import Hero from '../lib/new-components/Hero.svelte';
 	import WebsiteCardNew from '$lib/components/WebsiteCard_new.svelte';
 	import { onMount } from 'svelte';
 
@@ -55,7 +57,7 @@
 	<!-- Meta Tags Generated with https://metatags.io -->
 </svelte:head>
 
-<body class="flex flex-col w-full h-full mb-auto bg-slate-100">
+<!-- <body class="flex flex-col w-full h-full mb-auto bg-slate-100">
 	<div class="h-96 w-full relative">
 		<div class="absolute inset-0 bg-[#172651] opacity-80"></div>
 		<img
@@ -98,5 +100,31 @@
 			{/each}
 		</div>
 	</div>
-</body>
-``
+</body> -->
+
+<Hero />
+<!-- Title above the section -->
+<h1
+	class="text-4xl font-extrabold tracking-tight leading-none text-gray-900 my-8 text-center dark:text-black md:text-5xl lg:text-6xl"
+>
+	Schools
+</h1>
+<!-- schools grid -->
+<section class="py-8 px-4 mx-auto max-w-screen-xl">
+	<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+		{#each websites_data as data}
+			<a href={data.abbreviation} rel="noopener noreferrer">
+				<div
+					class="bg-gray-200 w-full h-[300px] flex flex-col items-center justify-center hover:scale-105 transition ease-in-out"
+				>
+					<img
+						class="w-auto h-[100px] mb-4"
+						src="school_logos/{data.logo}"
+						alt="school_logos/{data.logo}"
+					/>
+					<span class="text-center p-5">{data.name}</span>
+				</div>
+			</a>
+		{/each}
+	</div>
+</section>
